@@ -1,5 +1,29 @@
 <script lang="ts" setup>
   import { section1 } from "../../../helper_files/images";
+  import OmxButton from "../general/button.vue";
+  import SocialMediaBtn from "./components/social_media_btn.vue";
+  import { ref, onMounted } from "vue";
+
+  const leftSection = ref<HTMLElement>();
+  const rightSection = ref<HTMLElement>();
+
+  onMounted(() => {
+    const observerOptions = {
+      threshold: 0.2,
+      rootMargin: "0px 0px -100px 0px",
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("animate-in");
+        }
+      });
+    }, observerOptions);
+
+    if (leftSection.value) observer.observe(leftSection.value);
+    if (rightSection.value) observer.observe(rightSection.value);
+  });
 </script>
 
 <template>
@@ -10,7 +34,9 @@
       class="logo" />
     <div class="section1-content">
       <!-- Left: Text and actions -->
-      <div class="section1-left">
+      <div
+        class="section1-left"
+        ref="leftSection">
         <div class="profit-row">
           <img
             :src="section1.s1_icon_wallet"
@@ -22,36 +48,29 @@
           Buy &amp; Trade <span class="highlight">Crypto</span><br />
           Up to <span class="highlight">125× Futures Leverage</span>!
         </h1>
-        <button class="trade-btn">Trade</button>
+        <OmxButton>Trade</OmxButton>
         <div class="social-row">
-          <a
+          <SocialMediaBtn
             href="#"
-            class="social social-x"
-            aria-label="X">
-            <img
-              :src="section1.s1_x_twitter"
-              alt="X" />
-          </a>
-          <a
+            type="x"
+            :icon-src="section1.s1_x_twitter"
+            :ariaLabel="'X'" />
+          <SocialMediaBtn
             href="#"
-            class="social social-telegram"
-            aria-label="Telegram">
-            <img
-              :src="section1.s1_telegram"
-              alt="Telegram" />
-          </a>
-          <a
+            type="telegram"
+            :icon-src="section1.s1_telegram"
+            :ariaLabel="'Telegram'" />
+          <SocialMediaBtn
             href="#"
-            class="social social-linkedin"
-            aria-label="LinkedIn">
-            <img
-              :src="section1.s1_linkedin"
-              alt="LinkedIn" />
-          </a>
+            type="linkedin"
+            :icon-src="section1.s1_linkedin"
+            :ariaLabel="'LinkedIn'" />
         </div>
       </div>
       <!-- Right: Concept image -->
-      <div class="section1-right">
+      <div
+        class="section1-right"
+        ref="rightSection">
         <img
           :src="section1.s1_banner_image"
           alt="Concept"
@@ -62,15 +81,15 @@
 </template>
 
 <style scoped>
+  @import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap");
+
   .section1-hero {
-    width: 100vw;
+    width: auto;
     min-height: 100vh;
-    background: linear-gradient(45deg, #181a2a 50%, #2a2250 100%);
-    /* 315deg = top right to bottom left */
+    background: linear-gradient(45deg, #000000 50%, #2a2250 100%);
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 0 5rem;
   }
   .section1-content {
     display: flex;
@@ -78,147 +97,186 @@
     align-items: center;
     justify-content: center;
     width: 100%;
-    max-width: 1200px;
-    gap: 1rem;
+    max-width: 1500px;
+    gap: 2rem;
   }
   .section1-left {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     gap: 1.5rem;
-    flex: 1;
-    min-width: 300px;
+    width: 100%;
+    text-align: center;
+    opacity: 0;
+    transform: translateX(-60px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  }
+
+  .section1-left.animate-in {
+    opacity: 1;
+    transform: translateX(0);
   }
   .logo {
-    width: 30vw;
-    margin-bottom: 2.5rem;
+    width: 300px;
   }
   .profit-row {
     display: flex;
-    align-items: center;
-    gap: 0.75rem;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 1.5rem;
     font-size: 1.1rem;
     color: #fff;
     font-weight: 500;
+    justify-content: flex-start;
   }
   .wallet-icon {
-    width: 28px;
-    height: 28px;
+    width: 50px;
+    height: 50px;
     filter: brightness(0) invert(1);
   }
   .profit-label {
     color: #fff;
-    font-size: 1.1rem;
-    font-weight: 500;
+    font-size: 1.2rem;
+    font-weight: 900;
+    font-family: "Orbitron", monospace;
   }
   .main-title {
-    font-size: 2.1rem;
+    font-size: 0.5rem;
     font-weight: 700;
     color: #fff;
     line-height: 1.2;
-    margin: 0.5rem 0 1.5rem 0;
+    margin: 1rem 0;
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      sans-serif;
   }
   .highlight {
     color: #7b61ff;
-  }
-  .trade-btn {
-    background: #7b61ff;
-    color: #fff;
-    border: none;
-    border-radius: 10px;
-    padding: 0.7rem 2.2rem;
-    font-size: 1.1rem;
-    font-weight: 600;
-    margin: 1.2rem 0 1.5rem 0;
-    cursor: pointer;
-    transition: background 0.2s, box-shadow 0.2s;
-    box-shadow: 0 4px 24px 0 rgba(123, 97, 255, 0.15);
-  }
-  .trade-btn:hover {
-    background: #5f47d6;
   }
   .social-row {
     display: flex;
     gap: 2.2rem;
     margin-top: 0.5rem;
   }
-  .social {
-    width: 54px;
-    height: 54px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: transparent;
-    border: 2px solid #7b61ff;
-    transition: background 0.2s, border 0.2s;
-    cursor: pointer;
-    position: relative;
-  }
-  .social img {
-    width: 32px;
-    height: 32px;
-    transition: filter 0.2s, background 0.2s;
-    filter: invert(0) brightness(1);
-  }
-  /* Social icon hover: swap color/transparent */
-  .social:hover {
-    background: #7b61ff;
-    border: 2px solid #fff;
-  }
-  .social:hover img {
-    filter: invert(1) brightness(2) grayscale(1);
-  }
   .section1-right {
     flex: 1;
     display: flex;
     align-items: center;
     justify-content: center;
+    opacity: 0;
+    transform: translateY(-60px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    transition-delay: 0.2s;
+  }
+
+  .section1-right.animate-in {
+    opacity: 1;
+    transform: translateY(0);
   }
   .concept-img {
-    width: 340px;
-    max-width: 90vw;
-    border-radius: 18px;
+    width: 420px;
+    max-width: 95vw;
   }
-  @media (min-width: 900px) {
+  /* Tablet and up */
+  @media (max-width: 1023px) {
+    .logo {
+      width: 200px;
+    }
+    .section1-hero {
+      padding: 2rem;
+    }
+    .profit-row {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .profit-label {
+      font-size: 1.8rem;
+    }
+    .main-title {
+      font-size: 3.2rem;
+    }
+    .wallet-icon {
+      width: 70px;
+      height: 70px;
+    }
+    .concept-img {
+      width: 450px;
+      max-width: 450px;
+    }
+  }
+
+  /* Desktop and up */
+  @media (min-width: 1024px) {
+    .section1-hero {
+      padding: 2rem 4rem;
+    }
     .section1-content {
       flex-direction: row;
-      align-items: flex-start;
-      gap: 3.5rem;
+      align-items: center;
+      gap: 3rem;
+      text-align: left;
     }
     .section1-left {
       align-items: flex-start;
-      max-width: 480px;
+      text-align: left;
+      max-width: 600px;
+      /* flex: 1.5 1 0%; */
     }
     .section1-right {
       justify-content: flex-end;
+      align-self: flex-end;
+      margin-top: 2rem;
+      /* flex: 0.5 1 0%; Grow less */
     }
-    .concept-img {
-      width: 420px;
-      max-width: 420px;
-    }
-  }
-  @media (max-width: 600px) {
-    .section1-content {
-      gap: 1.2rem;
+    .profit-label {
+      font-size: 2.2rem;
+      white-space: nowrap;
     }
     .main-title {
-      font-size: 1.3rem;
+      font-size: 4rem;
     }
-    .logo {
-      width: 120px;
+
+    .concept-img {
+      width: 550px;
+      max-width: 550px;
+    }
+  }
+
+  /* Large desktop */
+  @media (min-width: 1440px) {
+    .profit-label {
+      font-size: 2.6rem;
     }
     .concept-img {
-      width: 90vw;
+      width: 620px;
+      max-width: 620px;
+    }
+  }
+
+  /* Mobile specific adjustments */
+  @media (max-width: 500px) {
+    .section1-hero {
+      padding: 1rem 0.5rem;
+    }
+    .profit-label {
+      font-size: 1.2rem;
+    }
+    .main-title {
+      font-size: 3rem;
+    }
+    .logo {
+      width: 150px;
+      padding-bottom: 2.5rem;
+    }
+    .concept-img {
+      padding-top: 30px;
+      width: 95vw;
       max-width: 95vw;
     }
-    .social {
+
+    .wallet-icon {
       width: 40px;
       height: 40px;
-    }
-    .social img {
-      width: 22px;
-      height: 22px;
     }
   }
 </style>

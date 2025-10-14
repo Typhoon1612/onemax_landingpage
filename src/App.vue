@@ -1,10 +1,12 @@
 <script setup lang="ts">
   import Section1 from "./components/section_1/main.vue";
+  import Section2 from "./components/section_2/main.vue";
 </script>
 
 <template>
   <div id="app">
     <Section1 />
+    <Section2 />
   </div>
 </template>
 
