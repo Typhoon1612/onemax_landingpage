@@ -69,10 +69,10 @@
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    background: #f7931a;
+    /* background: #f7931a; */
     padding: 12px;
     flex-shrink: 0;
-    box-shadow: 0 4px 12px rgba(247, 147, 26, 0.3);
+    box-shadow: 0 4px 12px #7b61ff;
   }
 
   .crypto-name {
@@ -164,7 +164,7 @@
     }
 
     .crypto-name {
-      font-size: 1.0rem;
+      font-size: 1rem;
       margin: 0 0 0 0.75rem;
     }
 

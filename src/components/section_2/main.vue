@@ -10,21 +10,20 @@
 <template>
   <section class="section2-crypto">
     <div class="section2-container">
-        <Swiper
-          :modules="modules"
-          :slides-per-view="3"
-          :space-between="32"
-          :navigation="true"
-          :pagination="{ clickable: true }"
-          :loop="true"
-          :autoplay="{ delay: 4000, disableOnInteraction: false }"
-          :breakpoints="{
-            320: { slidesPerView: 1, spaceBetween: 16 },
-            768: { slidesPerView: 2, spaceBetween: 24 },
-            1200: { slidesPerView: 3, spaceBetween: 32 },
-          }"
-          class="crypto-swiper"
-        >
+      <Swiper
+        :modules="modules"
+        :slides-per-view="3"
+        :space-between="32"
+        :navigation="true"
+        :pagination="{ clickable: true }"
+        :loop="true"
+        :autoplay="{ delay: 4000, disableOnInteraction: false }"
+        :breakpoints="{
+          320: { slidesPerView: 1, spaceBetween: 16 },
+          768: { slidesPerView: 2, spaceBetween: 24 },
+          1200: { slidesPerView: 3, spaceBetween: 32 },
+        }"
+        class="crypto-swiper">
         <SwiperSlide class="crypto-slide">
           <CryptoCard
             crypto-name="Bitcoin"
@@ -68,17 +67,20 @@
 <style scoped>
   .section2-crypto {
     width: 100%;
-    padding: 0rem 2rem;
+    padding: 1px 2rem; /* 1px vertical pad to avoid seam */
     background: #000000;
     min-height: 30vh;
     /* Remove flex centering for left alignment */
+    box-shadow: inset 0 1px 0 #000, inset 0 -1px 0 #000; /* mask hairlines */
+    overflow: hidden; /* clip sub-pixel artifacts */
+    transform: translateZ(0); /* force layer */
   }
 
   .section2-container {
     max-width: 1500px;
     width: 100%;
-     margin: 0 auto;
-     text-align: center;
+    margin: 0 auto;
+    text-align: center;
   }
 
   .crypto-swiper {
@@ -106,26 +108,7 @@
   /* Swiper Navigation Arrows */
   :deep(.swiper-button-next),
   :deep(.swiper-button-prev) {
-    color: #7b61ff;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    margin-top: -25px;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-  }
-
-  :deep(.swiper-button-next:hover),
-  :deep(.swiper-button-prev:hover) {
-    background: rgba(123, 97, 255, 0.3);
-    transform: scale(1.1);
-  }
-
-  :deep(.swiper-button-next:after),
-  :deep(.swiper-button-prev:after) {
-    font-size: 18px;
-    font-weight: bold;
+    display: none; /* completely hide navigation buttons */
   }
 
   /* Swiper Pagination Dots */
@@ -149,39 +132,14 @@
   /* Responsive adjustments */
   @media (max-width: 768px) {
     .section2-crypto {
-      padding: 0rem 1rem;
-      min-height: 30vh;
+      padding: 1px 1rem; /* maintain 1px vertical pad */
+      min-height: 20vh;
     }
     .crypto-swiper {
       width: 100%;
       max-width: 100%;
       margin: 0 auto;
     }
-    .crypto-slide {
-      /* no extra padding on mobile, Swiper handles gap */
-    }
-    :deep(.swiper-button-next),
-    :deep(.swiper-button-prev) {
-      width: 40px;
-      height: 40px;
-      margin-top: -20px;
-    }
-    :deep(.swiper-button-next:after),
-    :deep(.swiper-button-prev:after) {
-      font-size: 14px;
-    }
-  }
-
-  @media (max-width: 480px) {
-    /* .crypto-swiper {
-      padding: 1rem 0;
-    } */
-
-    :deep(.swiper-button-next),
-    :deep(.swiper-button-prev) {
-      width: 35px;
-      height: 35px;
-      margin-top: -17px;
-    }
+    /* removed empty ruleset */
   }
 </style>

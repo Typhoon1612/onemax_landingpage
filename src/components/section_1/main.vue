@@ -85,7 +85,7 @@
 
   .section1-hero {
     width: auto;
-    min-height: 100vh;
+    min-height: 100%;
     background: linear-gradient(45deg, #000000 50%, #2a2250 100%);
     display: flex;
     flex-direction: column;
