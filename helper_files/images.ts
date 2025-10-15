@@ -19,9 +19,9 @@ import s2_litecoin_logo from "@/assets/section_2/s2-litecoin-logo.png";
 // ------------------------------
 // SECTION 3
 // ------------------------------
-import s3_analyse_image from "@/assets/section_3/s3-analyse-image.jpg";
-import s3_connect_image from "@/assets/section_3/s3-connect-image.jpg";
-import s3_store_image from "@/assets/section_3/s3-store-image.jpg";
+import s3_analyse_image from "@/assets/section_3/s3-analyse-image.png";
+import s3_connect_image from "@/assets/section_3/s3-connect-image.png";
+import s3_store_image from "@/assets/section_3/s3-store-image.png";
 
 // ------------------------------
 // SECTION 4
@@ -46,9 +46,8 @@ import s5_icon_support from "@/assets/section_5/s5-icon-support.svg";
 // ------------------------------
 // SECTION 7
 // ------------------------------
-import s7_apps_download from "@/assets/section_7/s7-apps-download.png";
-import s7_concept_art from "@/assets/section_7/s7-concept-art.jpg";
-import s7_phone_14 from "@/assets/section_7/s7-phone_14.jpg";
+import s7_apps_barcode from "@/assets/section_7/s7-apps-barcode.png";
+import s7_concept_img from "@/assets/section_7/s7-concept-img.png";
 
 // ------------------------------
 // EXPORT ALL AS GROUPED OBJECTS
@@ -90,9 +89,8 @@ export const section5 = {
 };
 
 export const section7 = {
-  s7_apps_download,
-  s7_concept_art,
-  s7_phone_14,
+  s7_apps_barcode,
+  s7_concept_img,
 };
 
 // ------------------------------

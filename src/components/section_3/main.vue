@@ -1,380 +1,215 @@
-<script lang="ts" setup>
-import { section1 } from '../../../helper_files/images';
-import videos from '../../../helper_files/videos';
-import { ref } from 'vue';
+<script setup lang="ts">
+  import ConceptVidImg from "./components/concept_vid_img.vue";
+  import { section3 as section3Images } from "../../../helper_files/images";
+  import { section3 as section3Videos } from "../../../helper_files/videos";
+  import { ref, onMounted } from "vue";
+// Refs for each feature section
+  const headingRef = ref<HTMLElement>();
+  const analyseRef = ref<HTMLElement>();
+  const storeRef = ref<HTMLElement>();
+const connectRef = ref<HTMLElement>();
 
-// Video control state
-const isPlaying = ref(false);
-const videoRef = ref<HTMLVideoElement>();
+  onMounted(() => {
+    const observerOptions = {
+      threshold: 0.2,
+      rootMargin: "0px 0px -100px 0px",
+    };
 
-// Toggle video play/pause
-const toggleVideo = () => {
-  if (videoRef.value) {
-    if (isPlaying.value) {
-      videoRef.value.pause();
-    } else {
-      videoRef.value.play();
-    }
-    isPlaying.value = !isPlaying.value;
-  }
-};
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("animate-in");
+        }
+      });
+    }, observerOptions);
 
-// Handle video events
-const onVideoPlay = () => {
-  isPlaying.value = true;
-};
-
-const onVideoPause = () => {
-  isPlaying.value = false;
-};
+if (headingRef.value) observer.observe(headingRef.value);
+    if (analyseRef.value) observer.observe(analyseRef.value);
+    if (storeRef.value) observer.observe(storeRef.value);
+    if (connectRef.value) observer.observe(connectRef.value);
+    
+  });
 </script>
 
 <template>
-  <section class="hero-section">
-    <!-- Hero Content -->
-    <div class="hero-container">
-      <!-- Left side: Text content -->
-      <div class="hero-text">
-        <div class="brand-logo">
-          <img :src="section1.s1_1max_logo" alt="OneMax Logo" class="logo" />
-        </div>
-        
-        <h1 class="hero-title">
-          Buy & Trade <br />
-          <span class="highlight">Digital Assets</span> <br />
-          with Command
-        </h1>
-        
-        <p class="hero-subtitle">
-          Experience seamless cryptocurrency trading with our advanced platform. 
-          Store, analyze, and trade digital assets with confidence.
+  <section class="section3-container">
+    <!-- Header -->
+    <div class="section3-header">
+      <h1 class="section3-header-title animate-section" ref="headingRef">Top Features</h1>
+    </div>
+    <!-- Analyse -->
+  <div class="section3-content animate-section" ref="analyseRef">
+      <!-- Analyse: Text left, image right -->
+      <div
+        class="section3-text-left"
+        ref="leftSection">
+        <h1 class="section3-title">/Analyse</h1>
+        <p class="section3-description">
+          Track and analyze your crypto portfolio in real-time with advanced
+          analytics. Monitor market trends, view detailed performance charts,
+          and get insights on your holdings across multiple wallets. Our
+          AI-powered analysis helps you make informed decisions with live price
+          tracking, profit/loss calculations, and personalized recommendations
+          tailored to your investment strategy.
         </p>
-        
-        <div class="hero-actions">
-          <button class="cta-button primary">
-            <img :src="section1.s1_icon_wallet" alt="Wallet" class="button-icon" />
-            Get Started
-          </button>
-          
-          <button class="cta-button secondary" @click="toggleVideo">
-            {{ isPlaying ? '⏸️' : '▶️' }} Watch Demo
-          </button>
-        </div>
-        
-        <!-- Social Links -->
-        <div class="social-links">
-          <a href="#" class="social-link">
-            <img :src="section1.s1_linkedin" alt="LinkedIn" />
-          </a>
-          <a href="#" class="social-link">
-            <img :src="section1.s1_telegram" alt="Telegram" />
-          </a>
-          <a href="#" class="social-link">
-            <img :src="section1.s1_x_twitter" alt="Twitter" />
-          </a>
-        </div>
       </div>
-      
-      <!-- Right side: Video/Image content -->
-      <div class="hero-media">
-        <!-- Video Container -->
-        <div class="video-container">
-          <video
-            ref="videoRef"
-            class="hero-video"
-            :poster="section1.s1_banner_image"
-            @play="onVideoPlay"
-            @pause="onVideoPause"
-            @ended="onVideoPause"
-            controls
-            muted
-            loop
-          >
-            <!-- Use section 6 video as demo, or add a section 1 video to videos.ts -->
-            <source :src="videos.section6.s6_video" type="video/mp4" />
-            <p>Your browser doesn't support HTML video.</p>
-          </video>
-          
-          <!-- Video overlay controls -->
-          <div class="video-overlay" v-if="!isPlaying" @click="toggleVideo">
-            <div class="play-button">
-              <span class="play-icon">▶️</span>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Fallback image when video is not playing -->
-        <div class="hero-image" v-show="false">
-          <img :src="section1.s1_banner_image" alt="OneMax Trading App" />
-        </div>
+      <div class="section3-img-vid-right">
+        <ConceptVidImg
+          :video-link="section3Videos.s3_analyse_video"
+          :image-link="section3Images.s3_analyse_image" />
+      </div>
+    </div>
+    <!-- Store -->
+  <div class="section3-content animate-section" ref="storeRef">
+      <!-- Store: Text left, image right -->
+      <div
+        class="section3-img-vid-left"
+        ref="rightSection">
+        <ConceptVidImg
+          :video-link="section3Videos.s3_store_video"
+          :image-link="section3Images.s3_analyse_image" />
+      </div>
+      <div class="section3-text-right">
+        <h1 class="section3-title">/Store</h1>
+        <p class="section3-description">
+          Store any crypto on OKX Wallet, including BTC, ETH, USDT, or meme
+          tokens and NFTs. Our wallet allows you to create up to 1,000
+          sub-accounts at once, and you can fully manage your keys.
+        </p>
+        <
+      </div>
+    </div>
+    <!-- Connect -->
+  <div class="section3-content animate-section" ref="connectRef">
+      <!-- Connect: Text left, image right -->
+      <div
+        class="section3-text-left"
+        ref="leftSection">
+        <h1 class="section3-title">/Connect</h1>
+        <p class="section3-description">
+          Seamlessly connect to thousands of decentralized applications across
+          multiple blockchains. Access DeFi protocols, NFT marketplaces, and
+          Web3 services directly from your wallet. Our secure connection
+          protocol ensures your private keys never leave your device while
+          enabling one-click access to the entire crypto ecosystem. Experience
+          true interoperability with support for Ethereum, BSC, Polygon, and
+          more.
+        </p>
+      </div>
+      <div class="section3-img-vid-right">
+        <ConceptVidImg
+          :video-link="section3Videos.s3_connect_video"
+          :image-link="section3Images.s3_connect_image" />
       </div>
     </div>
   </section>
 </template>
 
 <style scoped>
-.hero-section {
-  min-height: 100vh;
-  background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
-  color: white;
-  padding: 2rem 1rem;
-  display: flex;
-  align-items: center;
-}
+  @import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap");
 
-.hero-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 3rem;
-  align-items: center;
-}
-
-/* Text Content */
-.hero-text {
-  text-align: center;
-}
-
-.brand-logo {
-  margin-bottom: 2rem;
-}
-
-.logo {
-  height: 60px;
-  width: auto;
-}
-
-.hero-title {
-  font-size: 2.5rem;
-  font-weight: 700;
-  line-height: 1.2;
-  margin-bottom: 1.5rem;
-}
-
-.highlight {
-  background: linear-gradient(45deg, #667eea, #764ba2);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.hero-subtitle {
-  font-size: 1.1rem;
-  color: #b8b8b8;
-  line-height: 1.6;
-  margin-bottom: 2rem;
-  max-width: 500px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.hero-actions {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-bottom: 2rem;
-}
-
-.cta-button {
-  padding: 1rem 2rem;
-  border: none;
-  border-radius: 12px;
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  min-width: 150px;
-  justify-content: center;
-}
-
-.cta-button.primary {
-  background: linear-gradient(45deg, #667eea, #764ba2);
-  color: white;
-}
-
-.cta-button.primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
-}
-
-.cta-button.secondary {
-  background: transparent;
-  color: white;
-  border: 2px solid #667eea;
-}
-
-.cta-button.secondary:hover {
-  background: #667eea;
-  transform: translateY(-2px);
-}
-
-.button-icon {
-  width: 20px;
-  height: 20px;
-}
-
-.social-links {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-}
-
-.social-link {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 50%;
-  transition: all 0.3s ease;
-}
-
-.social-link:hover {
-  background: rgba(102, 126, 234, 0.3);
-  transform: translateY(-2px);
-}
-
-.social-link img {
-  width: 20px;
-  height: 20px;
-}
-
-/* Video/Media Content */
-.hero-media {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.video-container {
-  position: relative;
-  width: 100%;
-  max-width: 400px;
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-}
-
-.hero-video {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 20px;
-}
-
-.video-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(0, 0, 0, 0.4);
-  cursor: pointer;
-  transition: opacity 0.3s ease;
-}
-
-.video-overlay:hover {
-  background: rgba(0, 0, 0, 0.6);
-}
-
-.play-button {
-  width: 80px;
-  height: 80px;
-  background: rgba(102, 126, 234, 0.9);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s ease;
-}
-
-.play-button:hover {
-  transform: scale(1.1);
-  background: rgba(102, 126, 234, 1);
-}
-
-.play-icon {
-  font-size: 2rem;
-  margin-left: 4px; /* Optical alignment for play icon */
-}
-
-.hero-image img {
-  width: 100%;
-  height: auto;
-  border-radius: 20px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-}
-
-/* Tablet and Desktop */
-@media (min-width: 768px) {
-  .hero-container {
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
+  .section3-container {
+    width: 100%;
+    background: #000;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem;
   }
-  
-  .hero-text {
-    text-align: left;
-  }
-  
-  .hero-title {
-    font-size: 3rem;
-  }
-  
-  .hero-subtitle {
-    margin-left: 0;
-    margin-right: 0;
-  }
-  
-  .hero-actions {
-    justify-content: flex-start;
-  }
-  
-  .social-links {
-    justify-content: flex-start;
-  }
-  
-  .video-container {
-    max-width: 500px;
-  }
-}
 
-@media (min-width: 1024px) {
-  .hero-title {
-    font-size: 3.5rem;
+  .section3-header {
+    text-align: center;
+    margin-bottom: 4rem;
   }
-  
-  .video-container {
+
+  .section3-header-title {
+    font-family: "Orbitron", monospace;
+    font-size: clamp(2rem, 5vw, 9rem);
+    font-weight: 900;
+    color: #fff;
+    margin: 0;
+    letter-spacing: 0.05em;
+  }
+
+  .section3-content {
+    max-width: 1400px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5rem 0 5rem 0rem;
+    gap: 6rem;
+  }
+
+  .section3-text-left .section3-text-right {
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
     max-width: 600px;
   }
-}
 
-/* Mobile specific adjustments */
-@media (max-width: 767px) {
-  .hero-section {
-    padding: 1rem;
+  .section3-img-vid-right .section3-img-vid-left {
+    flex: 1 1 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
-  
-  .hero-title {
-    font-size: 2rem;
+
+  .section3-title {
+    font-family: "Orbitron", monospace;
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 900;
+    color: #fff;
+    margin: 0;
+    letter-spacing: 0.05em;
   }
-  
-  .cta-button {
-    padding: 0.875rem 1.5rem;
-    font-size: 0.9rem;
-    min-width: 140px;
+
+  .section3-description {
+    font-size: clamp(1rem, 2vw, 1.15rem);
+    line-height: 1.7;
+    color: #d9d9d9;
+    margin: 0;
+    font-weight: 400;
   }
-  
-  .video-container {
-    max-width: 350px;
+
+  @media (max-width: 900px) {
+    .section3-container {
+      padding: 0rem 0rem;
+      min-height: auto;
+    }
+    .section3-header {
+      margin-bottom: 2rem;
+    }
+    .section3-content {
+      flex-direction: column;
+      gap: 2rem;
+      padding: 3rem 0;
+    }
+    /* Force image/video to always appear first on mobile */
+    .section3-img-vid-right,
+    .section3-img-vid-left {
+      order: 1;
+    }
+    /* Force text to always appear second on mobile */
+    .section3-text-left,
+    .section3-text-right {
+      order: 2;
+      text-align: center;
+      align-items: center;
+    }
   }
-}
+  /* Animation styles */
+  .animate-section {
+    opacity: 0;
+    transform: translateY(60px);
+    transition: opacity 0.8s cubic-bezier(0.4,0,0.2,1), transform 0.8s cubic-bezier(0.4,0,0.2,1);
+    will-change: opacity, transform;
+  }
+  .animate-section.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+  }
 </style>
