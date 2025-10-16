@@ -12,7 +12,7 @@
     <div class="section2-container">
       <Swiper
         :modules="modules"
-        :slides-per-view="3"
+        :slides-per-view="4"
         :space-between="32"
         :navigation="true"
         :pagination="{ clickable: true }"
@@ -21,7 +21,7 @@
         :breakpoints="{
           320: { slidesPerView: 1, spaceBetween: 16 },
           768: { slidesPerView: 2, spaceBetween: 24 },
-          1200: { slidesPerView: 3, spaceBetween: 32 },
+          1200: { slidesPerView: 4, spaceBetween: 30 },
         }"
         class="crypto-swiper">
         <SwiperSlide class="crypto-slide">

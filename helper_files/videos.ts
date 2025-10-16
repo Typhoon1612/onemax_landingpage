@@ -3,7 +3,7 @@
 // ------------------------------
 import s3_analyse_video from "@/assets/section_3/s3-analyse-video.mp4";
 import s3_connect_video from "@/assets/section_3/s3-connect-video.mp4";
-import s3_store_video from "@/assets/section_3/s3_store-video.mp4";
+import s3_store_video from "@/assets/section_3/s3-store-video.mp4";
 
 // ------------------------------
 // SECTION 6

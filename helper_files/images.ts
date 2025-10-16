@@ -1,10 +1,15 @@
 // ------------------------------
+// General
+// ------------------------------
+import g_1max_icon from "@/assets/general/g-1max-icon.png";
+
+// ------------------------------
 // SECTION 1
 // ------------------------------
 import s1_1max_logo from "@/assets/section_1/s1-1max-logo.png";
 import s1_banner_image from "@/assets/section_1/s1-banner-image.png";
 import s1_icon_wallet from "@/assets/section_1/s1-icon-wallet.svg";
-import s1_linkedin from "@/assets/section_1/s1-linkedin.svg";
+import s1_instagram from "@/assets/section_1/s1-instagram.svg";
 import s1_telegram from "@/assets/section_1/s1-telegram.svg";
 import s1_x_twitter from "@/assets/section_1/s1-x-twitter.svg";
 
@@ -52,11 +57,15 @@ import s7_concept_img from "@/assets/section_7/s7-concept-img.png";
 // ------------------------------
 // EXPORT ALL AS GROUPED OBJECTS
 // ------------------------------
+export const general = {
+  g_1max_icon,
+};
+
 export const section1 = {
   s1_1max_logo,
   s1_banner_image,
   s1_icon_wallet,
-  s1_linkedin,
+  s1_instagram,
   s1_telegram,
   s1_x_twitter,
 };

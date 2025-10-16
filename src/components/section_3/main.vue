@@ -74,7 +74,7 @@
         ref="rightSection">
         <ConceptVidImg
           :video-link="section3Videos.s3_store_video"
-          :image-link="section3Images.s3_analyse_image" />
+          :image-link="section3Images.s3_store_image" />
       </div>
       <div class="section3-text-right">
         <h1 class="section3-title">/Store</h1>

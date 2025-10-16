@@ -40,7 +40,7 @@
       class="section7-center"
       ref="centerSection">
       <h1 class="section7-title">
-        Trade with <span style="color: #7b61ff">1Max</span>. Anywhere, anytime.
+        Experience <span style="color: #7b61ff">1Max</span>. Anywhere, anytime.
       </h1>
       <div class="qr-block">
         <img
@@ -166,7 +166,7 @@
   }
   .platform-icons {
     display: flex;
-    gap: 20rem; /* slightly tighter with two items */
+    gap: 10rem; /* slightly tighter with two items */
     margin-top: 1.5rem;
     margin-left: 1rem;
     justify-content: flex-start; /* align left */
@@ -179,11 +179,11 @@
     gap: 0.5rem;
   }
   .platform-icon {
-    font-size: 6rem;
+    font-size: 3.5rem;
     color: #d9d9d9;
   }
   .platform-label {
-    font-size: 3rem;
+    font-size: 2rem;
     color: #d9d9d9;
     font-weight: 500;
     margin-top: 0.25rem;
