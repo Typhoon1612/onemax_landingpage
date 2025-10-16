@@ -84,12 +84,13 @@
   @import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap");
 
   .section1-hero {
-    width: auto;
-    min-height: 100%;
+    width: 100%;
+    min-height: 100vh;
     background: linear-gradient(45deg, #000000 50%, #2a2250 100%);
     display: flex;
     flex-direction: column;
     align-items: center;
+    overflow-x: hidden; /* Prevent horizontal overflow */
   }
   .section1-content {
     display: flex;
