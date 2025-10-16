@@ -2,7 +2,9 @@
   <a
     :href="href"
     :class="['social', `social-${type}`]"
-    :aria-label="ariaLabel">
+    :aria-label="ariaLabel"
+    target="_blank"
+    rel="noopener noreferrer">
     <img
       :src="iconSrc"
       :alt="ariaLabel" />
@@ -14,7 +16,7 @@
 
   defineProps<{
     href: string;
-    type: "x" | "telegram" | "linkedin";
+    type: "x" | "telegram" | "instagram";
     iconSrc: string;
     ariaLabel: string;
   }>();

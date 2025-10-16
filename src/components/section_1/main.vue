@@ -42,28 +42,40 @@
             :src="section1.s1_icon_wallet"
             alt="Wallet"
             class="wallet-icon" />
-          <span class="profit-label">Maximize Your Crypto Profit:</span>
+          <span class="profit-label"
+            ><span class="highlight">Smarter</span> Tools.
+            <span class="highlight">Faster</span> Decisions.
+          </span>
         </div>
         <h1 class="main-title">
-          Buy &amp; Trade <span class="highlight">Crypto</span><br />
-          Up to <span class="highlight">125× Futures Leverage</span>!
+          Access <span class="highlight">advanced market tools</span>,
+          intelligent analytics, and
+          <span class="highlight">effortless setup</span>.
         </h1>
-        <OmxButton>Trade</OmxButton>
+        <OmxButton
+          ><a
+            href="https://www.1max.com/en_US/register"
+            target="_blank"
+            rel="noopener noreferrer"
+            style="text-decoration: none; color: inherit"
+            >Register</a
+          ></OmxButton
+        >
         <div class="social-row">
           <SocialMediaBtn
-            href="#"
+            href="https://x.com/1MAX_GLOBAL"
             type="x"
             :icon-src="section1.s1_x_twitter"
             :ariaLabel="'X'" />
           <SocialMediaBtn
-            href="#"
+            href="https://t.me/onemaxchannel"
             type="telegram"
             :icon-src="section1.s1_telegram"
             :ariaLabel="'Telegram'" />
           <SocialMediaBtn
-            href="#"
-            type="linkedin"
-            :icon-src="section1.s1_linkedin"
+            href="https://www.instagram.com/1max_global/"
+            type="instagram"
+            :icon-src="section1.s1_instagram"
             :ariaLabel="'LinkedIn'" />
         </div>
       </div>
@@ -230,11 +242,11 @@
       /* flex: 0.5 1 0%; Grow less */
     }
     .profit-label {
-      font-size: 2.2rem;
+      font-size: 1.8rem;
       white-space: nowrap;
     }
     .main-title {
-      font-size: 4rem;
+      font-size: 3rem;
     }
 
     .concept-img {
@@ -246,7 +258,7 @@
   /* Large desktop */
   @media (min-width: 1440px) {
     .profit-label {
-      font-size: 2.6rem;
+      font-size: 2rem;
     }
     .concept-img {
       width: 620px;
