@@ -3,11 +3,11 @@
   import { section3 as section3Images } from "../../../helper_files/images";
   import { section3 as section3Videos } from "../../../helper_files/videos";
   import { ref, onMounted } from "vue";
-// Refs for each feature section
+  // Refs for each feature section
   const headingRef = ref<HTMLElement>();
   const analyseRef = ref<HTMLElement>();
   const storeRef = ref<HTMLElement>();
-const connectRef = ref<HTMLElement>();
+  const connectRef = ref<HTMLElement>();
 
   onMounted(() => {
     const observerOptions = {
@@ -23,11 +23,10 @@ const connectRef = ref<HTMLElement>();
       });
     }, observerOptions);
 
-if (headingRef.value) observer.observe(headingRef.value);
+    if (headingRef.value) observer.observe(headingRef.value);
     if (analyseRef.value) observer.observe(analyseRef.value);
     if (storeRef.value) observer.observe(storeRef.value);
     if (connectRef.value) observer.observe(connectRef.value);
-    
   });
 </script>
 
@@ -35,10 +34,16 @@ if (headingRef.value) observer.observe(headingRef.value);
   <section class="section3-container">
     <!-- Header -->
     <div class="section3-header">
-      <h1 class="section3-header-title animate-section" ref="headingRef">Top Features</h1>
+      <h1
+        class="section3-header-title animate-section"
+        ref="headingRef">
+        Top Features
+      </h1>
     </div>
     <!-- Analyse -->
-  <div class="section3-content animate-section" ref="analyseRef">
+    <div
+      class="section3-content animate-section"
+      ref="analyseRef">
       <!-- Analyse: Text left, image right -->
       <div
         class="section3-text-left"
@@ -60,7 +65,9 @@ if (headingRef.value) observer.observe(headingRef.value);
       </div>
     </div>
     <!-- Store -->
-  <div class="section3-content animate-section" ref="storeRef">
+    <div
+      class="section3-content animate-section"
+      ref="storeRef">
       <!-- Store: Text left, image right -->
       <div
         class="section3-img-vid-left"
@@ -80,7 +87,9 @@ if (headingRef.value) observer.observe(headingRef.value);
       </div>
     </div>
     <!-- Connect -->
-  <div class="section3-content animate-section" ref="connectRef">
+    <div
+      class="section3-content animate-section"
+      ref="connectRef">
       <!-- Connect: Text left, image right -->
       <div
         class="section3-text-left"
@@ -117,6 +126,7 @@ if (headingRef.value) observer.observe(headingRef.value);
     align-items: center;
     justify-content: center;
     padding: 4rem 2rem;
+    overflow-x: hidden; /* Prevent horizontal overflow */
   }
 
   .section3-header {
@@ -205,7 +215,8 @@ if (headingRef.value) observer.observe(headingRef.value);
   .animate-section {
     opacity: 0;
     transform: translateY(60px);
-    transition: opacity 0.8s cubic-bezier(0.4,0,0.2,1), transform 0.8s cubic-bezier(0.4,0,0.2,1);
+    transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+      transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
     will-change: opacity, transform;
   }
   .animate-section.animate-in {

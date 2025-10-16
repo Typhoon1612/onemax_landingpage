@@ -68,6 +68,7 @@
 
 <style scoped>
   .section7-hero {
+    width: 100%;
     min-height: 100vh;
     color: #fff;
     display: flex;
@@ -77,6 +78,7 @@
     padding: 4rem 4rem;
     gap: 4rem;
     box-shadow: inset 0 1px 0 #000, inset 0 -1px 0 #000; /* mask hairlines */
+    overflow-x: hidden; /* Prevent horizontal overflow */
   }
   .section7-left {
     display: flex;

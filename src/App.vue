@@ -29,9 +29,12 @@
     line-height: 1.6;
     color: #333;
     background: #000; /* ensure page background is black to match sections */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
   }
 
   #app {
     min-height: 100vh;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    width: 100%;
   }
 </style>
