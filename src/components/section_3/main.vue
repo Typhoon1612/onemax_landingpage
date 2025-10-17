@@ -124,7 +124,6 @@
     align-items: center;
     justify-content: center;
     padding: 2rem 2rem;
-    overflow-x: hidden; /* Prevent horizontal overflow */
   }
 
   .section3-header {
