@@ -5,7 +5,8 @@ import path from "path";
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [vue()],
-  base: "/onemax_landingpage/",
+  base: "/",
+  build: { outDir: "dist"  },
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
