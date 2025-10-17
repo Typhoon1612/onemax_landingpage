@@ -50,12 +50,11 @@
         ref="leftSection">
         <h1 class="section3-title">/Analyse</h1>
         <p class="section3-description">
-          Track and analyze your crypto portfolio in real-time with advanced
-          analytics. Monitor market trends, view detailed performance charts,
-          and get insights on your holdings across multiple wallets. Our
-          AI-powered analysis helps you make informed decisions with live price
-          tracking, profit/loss calculations, and personalized recommendations
-          tailored to your investment strategy.
+          Track and analyze your digital portfolio in real time with advanced
+          analytics. Monitor market trends, view detailed performance data, and
+          gain insights across multiple wallets. Smart tools help you stay
+          informed with live price tracking and personalized insights for your
+          Web3 strategy.
         </p>
       </div>
       <div class="section3-img-vid-right">
@@ -79,9 +78,10 @@
       <div class="section3-text-right">
         <h1 class="section3-title">/Store</h1>
         <p class="section3-description">
-          Store any crypto on OKX Wallet, including BTC, ETH, USDT, or meme
-          tokens and NFTs. Our wallet allows you to create up to 1,000
-          sub-accounts at once, and you can fully manage your keys.
+          Built for the future of finance, 1MAX Wallet lets you manage BTC, ETH,
+          USDT, and other digital assets in one powerful ecosystem. Experience
+          seamless access, smart tools, and complete control over your Web3
+          portfolio.
         </p>
         <
       </div>
@@ -96,13 +96,11 @@
         ref="leftSection">
         <h1 class="section3-title">/Connect</h1>
         <p class="section3-description">
-          Seamlessly connect to thousands of decentralized applications across
-          multiple blockchains. Access DeFi protocols, NFT marketplaces, and
-          Web3 services directly from your wallet. Our secure connection
-          protocol ensures your private keys never leave your device while
-          enabling one-click access to the entire crypto ecosystem. Experience
-          true interoperability with support for Ethereum, BSC, Polygon, and
-          more.
+          Effortlessly connect to a world of decentralized applications across
+          multiple networks. Explore Web3 services all from one secure
+          interface. Your data stays protected on your device while you enjoy
+          simple, one-tap access to a truly connected Web3 experience. Built for
+          interoperability with Ethereum, BNB Smart Chain, Polygon, and more.
         </p>
       </div>
       <div class="section3-img-vid-right">
@@ -125,18 +123,18 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 4rem 2rem;
+    padding: 2rem 2rem;
     overflow-x: hidden; /* Prevent horizontal overflow */
   }
 
   .section3-header {
     text-align: center;
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
   }
 
   .section3-header-title {
     font-family: "Orbitron", monospace;
-    font-size: clamp(2rem, 5vw, 9rem);
+    font-size: clamp(2rem, 5vw, 5rem);
     font-weight: 900;
     color: #fff;
     margin: 0;
