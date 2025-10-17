@@ -17,7 +17,8 @@
       autoplay
       loop
       muted
-      playsinline></video>
+      playsinline
+      preload="auto"></video>
   </div>
 </template>
 
@@ -50,6 +51,10 @@
     object-fit: cover;
     z-index: 1;
     border-radius: 18px;
-    filter: brightness(0.7) blur(1px);
+    filter: brightness(0.7);
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
   }
 </style>

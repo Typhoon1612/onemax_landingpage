@@ -6,7 +6,10 @@ import path from "path";
 export default defineConfig({
   plugins: [vue()],
   base: "/",
-  build: { outDir: "dist"  },
+  build: { 
+    outDir: "dist",
+    assetsInlineLimit: 0, // Don't inline videos - keeps them as separate files
+  },
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
