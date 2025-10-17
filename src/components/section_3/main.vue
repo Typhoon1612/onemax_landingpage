@@ -50,7 +50,11 @@
         ref="leftSection">
         <h1 class="section3-title">/Analyse</h1>
         <p class="section3-description">
-          Track and analyze your digital portfolio in real time with advanced analytics. Monitor market trends, view detailed performance data, and gain insights across multiple wallets. Smart tools help you stay informed with live price tracking and personalized insights for your Web3 strategy.
+          Track and analyze your digital portfolio in real time with advanced
+          analytics. Monitor market trends, view detailed performance data, and
+          gain insights across multiple wallets. Smart tools help you stay
+          informed with live price tracking and personalized insights for your
+          Web3 strategy.
         </p>
       </div>
       <div class="section3-img-vid-right">
@@ -74,7 +78,10 @@
       <div class="section3-text-right">
         <h1 class="section3-title">/Store</h1>
         <p class="section3-description">
-          Built for the future of finance, 1MAX Wallet lets you manage BTC, ETH, USDT, and other digital assets in one powerful ecosystem. Experience seamless access, smart tools, and complete control over your Web3 portfolio.
+          Built for the future of finance, 1MAX Wallet lets you manage BTC, ETH,
+          USDT, and other digital assets in one powerful ecosystem. Experience
+          seamless access, smart tools, and complete control over your Web3
+          portfolio.
         </p>
         <
       </div>
@@ -89,7 +96,11 @@
         ref="leftSection">
         <h1 class="section3-title">/Connect</h1>
         <p class="section3-description">
-          Effortlessly connect to a world of decentralized applications across multiple networks. Explore Web3 services all from one secure interface. Your data stays protected on your device while you enjoy simple, one-tap access to a truly connected Web3 experience. Built for interoperability with Ethereum, BNB Smart Chain, Polygon, and more.
+          Effortlessly connect to a world of decentralized applications across
+          multiple networks. Explore Web3 services all from one secure
+          interface. Your data stays protected on your device while you enjoy
+          simple, one-tap access to a truly connected Web3 experience. Built for
+          interoperability with Ethereum, BNB Smart Chain, Polygon, and more.
         </p>
       </div>
       <div class="section3-img-vid-right">
