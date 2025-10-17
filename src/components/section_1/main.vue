@@ -52,14 +52,12 @@
           intelligent analytics, and
           <span class="highlight">effortless setup</span>.
         </h1>
-        <OmxButton
-          ><a
-            href="https://www.1max.com/en_US/register"
-            target="_blank"
-            rel="noopener noreferrer"
-            style="text-decoration: none; color: inherit"
-            >Register</a
-          ></OmxButton
+        <a
+          href="https://www.1max.com/en_US/register"
+          target="_blank"
+          rel="noopener noreferrer"
+          style="text-decoration: none; color: inherit"
+          ><OmxButton>Register</OmxButton></a
         >
         <div class="social-row">
           <SocialMediaBtn
