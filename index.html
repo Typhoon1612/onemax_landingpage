@@ -2,7 +2,9 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="google-site-verification" content="-ONpkVMKyCFPO_bS34aTzm0QN2aA5LsxpPhAcDHMT0A" />
+    <meta
+      name="google-site-verification"
+      content="-ONpkVMKyCFPO_bS34aTzm0QN2aA5LsxpPhAcDHMT0A" />
     <link
       rel="icon"
       type="1max/png"
@@ -28,13 +30,31 @@
       referrerpolicy="no-referrer" />
 
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17671505183"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=AW-17671505183"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-      gtag('config', 'AW-17671505183');
+      gtag("config", "AW-17671505183");
+      function gtag_report_conversion(url) {
+        var callback = function () {
+          if (typeof url != "undefined") {
+            window.location = url;
+          }
+        };
+        gtag("event", "conversion", {
+          send_to: "AW-17671505183/LvEfCI-L0bEbEJ-Kt-pB",
+          value: 1.0,
+          currency: "MYR",
+          event_callback: callback,
+        });
+        return false;
+      }
     </script>
 
     <script type="application/ld+json">
