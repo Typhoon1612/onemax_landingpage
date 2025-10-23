@@ -16,7 +16,7 @@
   // Axios Functions
   const fetchCryptoData = async (cryptoSymbol: string) => {
     try {
-      const res = await axios.get("http://localhost:3000/price", {
+      const res = await axios.get("https://onemax-crypto-server.onrender.com/price", {
         params: { symbol: cryptoSymbol, convert: "USD" },
       });
       console.log("Fetched crypto data:", res.data);
