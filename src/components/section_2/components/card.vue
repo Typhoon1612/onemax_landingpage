@@ -1,16 +1,54 @@
 <script lang="ts" setup>
-  import { defineProps, computed } from "vue";
+  import { defineProps, computed, onMounted, ref, onBeforeUnmount } from "vue";
+  import axios from "axios";
 
+  // Props
   const props = defineProps<{
     cryptoName: string;
     cryptoSymbol: string;
     cryptoLogo: string;
-    currentPrice: string;
-    priceChange: string;
   }>();
 
+  // Reactive Data
+  const currentPrice = ref(0);
+  const priceChange = ref(0);
+
+  // Axios Functions
+  const fetchCryptoData = async (cryptoSymbol: string) => {
+    try {
+      const res = await axios.get("http://localhost:3000/price", {
+        params: { symbol: cryptoSymbol, convert: "USD" },
+      });
+      console.log("Fetched crypto data:", res.data);
+      currentPrice.value = res.data.price;
+      priceChange.value = res.data.percent_change_1h;
+    } catch (error) {
+      console.error("Error fetching crypto data:", error);
+    }
+  };
+
+  // Fetch data on component mount
+  let intervalId: number | null = null;
+
+  // Fetch data on component mount and every second
+  onMounted(() => {
+    fetchCryptoData(props.cryptoSymbol); // Initial fetch
+    intervalId = setInterval(() => {
+      fetchCryptoData(props.cryptoSymbol);
+    }, 30000); // Call every 1 second (1000ms)
+  });
+
+  // Clean up interval when component unmounts
+  onBeforeUnmount(() => {
+    if (intervalId !== null) {
+      clearInterval(intervalId);
+    }
+  });
+
   const changeClass = computed(() => {
-    return props.priceChange.startsWith("+") ? "positive" : "negative";
+    return priceChange.value != null && priceChange.value < 0
+      ? "negative"
+      : "positive";
   });
 </script>
 
@@ -23,12 +61,16 @@
           :alt="cryptoName"
           class="crypto-logo" />
         <h3 class="crypto-name">{{ cryptoName }}</h3>
-        <span class="crypto-symbol">{{ cryptoSymbol }}</span>
+        <span class="crypto-symbol">{{ cryptoSymbol }}/USDT</span>
       </div>
 
       <div class="bottom-row">
-        <span class="current-price">${{ currentPrice }}</span>
-        <span :class="['price-change', changeClass]">{{ priceChange }}</span>
+        <span class="current-price"
+          >${{ currentPrice?.toFixed(2) ?? "--" }}</span
+        >
+        <span :class="['price-change', changeClass]"
+          >{{ priceChange?.toFixed(2) ?? "--" }} (1h Last)</span
+        >
       </div>
     </div>
   </div>
@@ -98,13 +140,13 @@
   }
 
   .current-price {
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 700;
     color: #ffffff;
   }
 
   .price-change {
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: 600;
   }
 
@@ -112,12 +154,17 @@
     color: #4ade80;
   }
 
+  .price-change.positive::before {
+    content: "+";
+  }
+
+
   .price-change.negative {
     color: #ef4444;
   }
 
   /* Responsive adjustments */
-  @media (max-width: 768px) {
+  @media (max-width: 1208px) {
     .crypto-card {
       width: 90%;
       max-width: 400px;
@@ -141,11 +188,11 @@
     }
 
     .current-price {
-      font-size: 2rem;
+      font-size: 1.5rem;
     }
 
     .price-change {
-      font-size: 1.2rem;
+      font-size: 1rem;
     }
   }
 
@@ -173,7 +220,7 @@
     }
 
     .current-price {
-      font-size: 1.8rem;
+      font-size: 1.4rem;
     }
 
     .price-change {

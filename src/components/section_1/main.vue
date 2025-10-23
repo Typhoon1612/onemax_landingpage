@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-  import { section1 } from "../../../helper_files/images";
+  import { section1 } from "../../helper_files/images";
   import OmxButton from "../general/button.vue";
   import SocialMediaBtn from "./components/social_media_btn.vue";
   import { ref, onMounted } from "vue";
