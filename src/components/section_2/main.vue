@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-  import { section2 } from "../../../helper_files/images";
+  import { section2 } from "../../helper_files/images";
   import CryptoCard from "./components/card.vue";
   import { Swiper, SwiperSlide } from "swiper/vue";
   import { Navigation, Pagination, Autoplay } from "swiper/modules";
@@ -27,37 +27,41 @@
         <SwiperSlide class="crypto-slide">
           <CryptoCard
             crypto-name="Bitcoin"
-            crypto-symbol="BTC/USDT"
-            :crypto-logo="section2.s2_bitcoin_logo"
-            current-price="8.00"
-            price-change="+4.1 (24h Last)" />
+            crypto-symbol="BTC"
+            :crypto-logo="section2.s2_bitcoin_logo" />
         </SwiperSlide>
 
         <SwiperSlide class="crypto-slide">
           <CryptoCard
             crypto-name="Dogecoin"
-            crypto-symbol="DOGE/USDT"
-            :crypto-logo="section2.s2_dogecoin_logo"
-            current-price="0.3421"
-            price-change="-2.3 (24h Last)" />
+            crypto-symbol="DOGE"
+            :crypto-logo="section2.s2_dogecoin_logo" />
         </SwiperSlide>
 
         <SwiperSlide class="crypto-slide">
           <CryptoCard
             crypto-name="Ethereum"
-            crypto-symbol="ETH/USDT"
-            :crypto-logo="section2.s2_ethereum_logo"
-            current-price="3,245.67"
-            price-change="+1.8 (24h Last)" />
+            crypto-symbol="ETH"
+            :crypto-logo="section2.s2_ethereum_logo" />
         </SwiperSlide>
 
         <SwiperSlide class="crypto-slide">
           <CryptoCard
             crypto-name="Litecoin"
-            crypto-symbol="LTC/USDT"
-            :crypto-logo="section2.s2_litecoin_logo"
-            current-price="94.32"
-            price-change="+0.7 (24h Last)" />
+            crypto-symbol="LTC"
+            :crypto-logo="section2.s2_litecoin_logo" />
+        </SwiperSlide>
+        <SwiperSlide class="crypto-slide">
+          <CryptoCard
+            crypto-name="Solana"
+            crypto-symbol="SOL"
+            :crypto-logo="section2.s2_solana_logo" />
+        </SwiperSlide>
+        <SwiperSlide class="crypto-slide">
+          <CryptoCard
+            crypto-name="Tron"
+            crypto-symbol="TRX"
+            :crypto-logo="section2.s2_tron_logo" />
         </SwiperSlide>
       </Swiper>
     </div>
@@ -88,7 +92,6 @@
     max-width: 1500px;
     margin-left: 0;
     margin-right: auto;
-    /* padding: 2rem 0; */
   }
 
   .crypto-slide {
