@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-  import { section7 } from "../../../helper_files/images";
+  import { section7 } from "../../helper_files/images";
   import { ref, onMounted } from "vue";
 
   const leftSection = ref<HTMLElement>();

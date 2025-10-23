@@ -1,7 +1,7 @@
 <script setup lang="ts">
   import ConceptVidImg from "./components/concept_vid_img.vue";
-  import { section3 as section3Images } from "../../../helper_files/images";
-  import { section3 as section3Videos } from "../../../helper_files/videos";
+  import { section3 as section3Images } from "../../helper_files/images";
+  import { section3 as section3Videos } from "../../helper_files/videos";
   import { ref, onMounted } from "vue";
   // Refs for each feature section
   const headingRef = ref<HTMLElement>();
