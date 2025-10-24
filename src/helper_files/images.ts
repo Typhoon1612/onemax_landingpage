@@ -19,7 +19,7 @@ import s1_x_twitter from "@/assets/section_1/s1-x-twitter.svg";
 import s2_bitcoin_logo from "@/assets/section_2/s2-bitcoin-logo.png";
 import s2_dogecoin_logo from "@/assets/section_2/s2-dogecoin-logo.png";
 import s2_ethereum_logo from "@/assets/section_2/s2-ethereum-logo.png";
-import s2_litecoin_logo from "@/assets/section_2/s2-litecoin-logo.png";
+import s2_xrp_logo from "@/assets/section_2/s2-xrp-logo.png";
 import s2_solana_logo from "@/assets/section_2/s2-solana-logo.png";
 import s2_tron_logo from "@/assets/section_2/s2-tron-logo.png";
 
@@ -76,7 +76,7 @@ export const section2 = {
   s2_bitcoin_logo,
   s2_dogecoin_logo,
   s2_ethereum_logo,
-  s2_litecoin_logo,
+  s2_xrp_logo,
   s2_solana_logo,
   s2_tron_logo,
 };
