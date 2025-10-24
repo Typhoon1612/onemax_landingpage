@@ -47,9 +47,9 @@
 
         <SwiperSlide class="crypto-slide">
           <CryptoCard
-            crypto-name="Litecoin"
-            crypto-symbol="LTC"
-            :crypto-logo="section2.s2_litecoin_logo" />
+            crypto-name="XRP"
+            crypto-symbol="XRP"
+            :crypto-logo="section2.s2_xrp_logo" />
         </SwiperSlide>
         <SwiperSlide class="crypto-slide">
           <CryptoCard
