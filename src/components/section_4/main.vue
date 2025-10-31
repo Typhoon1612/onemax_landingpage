@@ -815,7 +815,7 @@
   .frequency-spectrum {
     width: 280px;
   }
-  
+
   .status-text {
     font-size: 16px;
     min-width: 250px;
