@@ -71,7 +71,7 @@
 <style scoped>
   .section2-crypto {
     width: 100%;
-    padding: 1px 2rem; /* 1px vertical pad to avoid seam */
+    padding: 3rem 2rem; /* 1px vertical pad to avoid seam */
     background: #000000;
     min-height: 30vh;
     /* Remove flex centering for left alignment */
