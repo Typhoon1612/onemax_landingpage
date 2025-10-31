@@ -1,6 +1,7 @@
 <script lang="ts" setup>
   import { section1 as section1Vid } from "../../helper_files/videos";
-  import { section1 as section1Img } from "../../helper_files/images";
+import { section1 as section1Img } from "../../helper_files/images";
+import SciFiBtn from "./components/sci_fi_btn.vue"
 </script>
 
 <template>
@@ -14,7 +15,7 @@
       muted
       playsinline></video>
 
-    <!-- White panel overlay -->
+    White panel overlay
     <div class="white-panel"></div>
 
     <!-- Navbar -->
@@ -37,6 +38,7 @@
           intelligent analytics, and
           <span style="color: #7b61ff">effortless setup</span>.
         </p>
+        <SciFiBtn />
       </div>
     </div>
   </section>
