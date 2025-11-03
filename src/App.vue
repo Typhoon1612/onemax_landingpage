@@ -1,8 +1,8 @@
 <script setup lang="ts">
   import Section1 from "./components/section_1/main.vue";
   import Section2 from "./components/section_2/main.vue";
-import Section3 from "./components/section_3/main.vue";
-    import Section4 from "./components/section_4/main.vue";
+  import Section3 from "./components/section_3/main.vue";
+  import Section4 from "./components/section_4/main.vue";
   import Section7 from "./components/section_7/main.vue";
   import Footer from "./components/general/footer.vue";
 </script>

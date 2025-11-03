@@ -1,7 +1,7 @@
-<script lang="ts" setup>
-    import myImg from './assets/section_1/s1-1max-logo.png';
-</script>
+<script lang="ts" setup></script>
 
 <template>
-<img :src="myImg" alt="My Image" />
+  <div>
+    <h1>A cryptocurrency exchange trusted by our users</h1>
+  </div>
 </template>
