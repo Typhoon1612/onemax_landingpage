@@ -1,7 +1,7 @@
 <script lang="ts" setup>
   import { section1 as section1Vid } from "../../helper_files/videos";
-import { section1 as section1Img } from "../../helper_files/images";
-import SciFiBtn from "./components/sci_fi_btn.vue"
+  import { section1 as section1Img } from "../../helper_files/images";
+  import SciFiBtn from "./components/sci_fi_btn.vue";
 </script>
 
 <template>

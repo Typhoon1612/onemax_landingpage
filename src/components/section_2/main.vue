@@ -1,6 +1,7 @@
 <script lang="ts" setup>
   import { section2 } from "../../helper_files/images";
   import CryptoCard from "./components/card.vue";
+  import HackingRain from "../general/hackingRain.vue";
   import { Swiper, SwiperSlide } from "swiper/vue";
   import { Navigation, Pagination, Autoplay, FreeMode } from "swiper/modules";
 
@@ -9,6 +10,7 @@
 
 <template>
   <section class="section2-crypto">
+    <HackingRain class="background-rain" />
     <div class="section2-container">
       <Swiper
         :modules="modules"
@@ -78,10 +80,21 @@
     padding: 5rem 2rem; /* 1px vertical pad to avoid seam */
     background: #000000;
     min-height: 30vh;
+    position: relative;
     /* Remove flex centering for left alignment */
     box-shadow: inset 0 1px 0 #000, inset 0 -1px 0 #000; /* mask hairlines */
     overflow: hidden; /* clip sub-pixel artifacts */
     transform: translateZ(0); /* force layer */
+  }
+
+  .background-rain {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    opacity: 0.3;
   }
 
   .section2-container {
@@ -89,6 +102,8 @@
     width: 100%;
     margin: 0 auto;
     text-align: center;
+    position: relative;
+    z-index: 1;
   }
 
   .crypto-swiper {

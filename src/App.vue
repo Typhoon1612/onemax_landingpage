@@ -3,6 +3,7 @@
   import Section2 from "./components/section_2/main.vue";
   import Section3 from "./components/section_3/main.vue";
   import Section4 from "./components/section_4/main.vue";
+  import Section5 from "./components/section_5/main.vue";
   import Section7 from "./components/section_7/main.vue";
   import Footer from "./components/general/footer.vue";
 </script>
@@ -13,6 +14,7 @@
     <Section2 />
     <Section3 />
     <Section4 />
+    <Section5 />
     <Section7 />
     <Footer />
   </div>
