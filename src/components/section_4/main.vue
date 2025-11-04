@@ -14,6 +14,8 @@
 <style scoped>
   .section4-hero {
     position: relative;
+    overflow: hidden;
+    isolation: isolate;
   }
 
   .background-rain {

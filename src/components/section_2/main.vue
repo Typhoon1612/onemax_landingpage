@@ -1,7 +1,6 @@
 <script lang="ts" setup>
-  import { section2 } from "../../helper_files/images";
+  import { section2 as section2Img } from "../../helper_files/images";
   import CryptoCard from "./components/card.vue";
-  import HackingRain from "../general/hackingRain.vue";
   import { Swiper, SwiperSlide } from "swiper/vue";
   import { Navigation, Pagination, Autoplay, FreeMode } from "swiper/modules";
 
@@ -10,7 +9,6 @@
 
 <template>
   <section class="section2-crypto">
-    <HackingRain class="background-rain" />
     <div class="section2-container">
       <Swiper
         :modules="modules"
@@ -34,40 +32,40 @@
           <CryptoCard
             crypto-name="Bitcoin"
             crypto-symbol="BTC"
-            :crypto-logo="section2.s2_bitcoin_logo" />
+            :crypto-logo="section2Img.s2_bitcoin_logo" />
         </SwiperSlide>
 
         <SwiperSlide class="crypto-slide">
           <CryptoCard
             crypto-name="Dogecoin"
             crypto-symbol="DOGE"
-            :crypto-logo="section2.s2_dogecoin_logo" />
+            :crypto-logo="section2Img.s2_dogecoin_logo" />
         </SwiperSlide>
 
         <SwiperSlide class="crypto-slide">
           <CryptoCard
             crypto-name="Ethereum"
             crypto-symbol="ETH"
-            :crypto-logo="section2.s2_ethereum_logo" />
+            :crypto-logo="section2Img.s2_ethereum_logo" />
         </SwiperSlide>
 
         <SwiperSlide class="crypto-slide">
           <CryptoCard
             crypto-name="XRP"
             crypto-symbol="XRP"
-            :crypto-logo="section2.s2_xrp_logo" />
+            :crypto-logo="section2Img.s2_xrp_logo" />
         </SwiperSlide>
         <SwiperSlide class="crypto-slide">
           <CryptoCard
             crypto-name="Solana"
             crypto-symbol="SOL"
-            :crypto-logo="section2.s2_solana_logo" />
+            :crypto-logo="section2Img.s2_solana_logo" />
         </SwiperSlide>
         <SwiperSlide class="crypto-slide">
           <CryptoCard
             crypto-name="Tron"
             crypto-symbol="TRX"
-            :crypto-logo="section2.s2_tron_logo" />
+            :crypto-logo="section2Img.s2_tron_logo" />
         </SwiperSlide>
       </Swiper>
     </div>
@@ -77,30 +75,19 @@
 <style scoped>
   .section2-crypto {
     width: 100%;
-    padding: 5rem 2rem; /* 1px vertical pad to avoid seam */
-    background: #000000;
+    padding: 5rem 2rem;
+    background: transparent;
     min-height: 30vh;
     position: relative;
-    /* Remove flex centering for left alignment */
-    box-shadow: inset 0 1px 0 #000, inset 0 -1px 0 #000; /* mask hairlines */
-    overflow: hidden; /* clip sub-pixel artifacts */
-    transform: translateZ(0); /* force layer */
-  }
-
-  .background-rain {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-    opacity: 0.3;
+    box-shadow: inset 0 1px 0 #000, inset 0 -1px 0 #000;
+    transform: translateZ(0);
   }
 
   .section2-container {
     max-width: 1500px;
     width: 100%;
     margin: 0 auto;
+    display: flex;
     text-align: center;
     position: relative;
     z-index: 1;
@@ -108,14 +95,12 @@
 
   .crypto-swiper {
     width: 100%;
-    max-width: 1500px;
-    margin-left: 0;
-    margin-right: auto;
+    margin: 0 auto;
   }
 
   .crypto-slide {
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     height: 100%;
     box-sizing: border-box;

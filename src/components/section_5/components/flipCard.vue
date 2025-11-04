@@ -1,8 +1,7 @@
 <script lang="ts" setup>
   interface Props {
-    frontTitle: string;
+    title: string;
     frontImage: string;
-    backTitle: string;
     backContent: string;
   }
 
@@ -13,14 +12,14 @@
   <div class="flip-card">
     <div class="flip-card-inner">
       <div class="flip-card-front">
-        <p class="title">{{ props.frontTitle }}</p>
+        <p class="title">{{ props.title }}</p>
         <img
           :src="props.frontImage"
           alt="Flip Card Image" />
       </div>
       <div class="flip-card-back">
-        <p class="title">BACK</p>
-        <p>Leave Me</p>
+        <p class="title">{{ props.title }}</p>
+        <p>{{ props.backContent }}</p>
       </div>
     </div>
   </div>
@@ -76,12 +75,6 @@
 
   .flip-card-front {
     background: rgba(255, 255, 255, 0.147);
-    /* radial-gradient(
-      circle at top left,
-      #222222 0%,
-      rgba(255, 255, 255, 0.3) 60%,
-      #7b61ff 100%
-    ); */
   }
 
   .flip-card-front img {
@@ -95,12 +88,7 @@
 
   .flip-card-back {
     background: rgba(255, 255, 255, 0.147);
-    /* background: radial-gradient(
-      circle at top left,
-      #888888 0%,
-      #444444 50%,
-      #222222 100%
-    ); */
+
     color: white;
     transform: rotateY(180deg);
     align-items: flex-start;

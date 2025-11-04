@@ -12,24 +12,20 @@
   </div>
   <div class="flip-card-container">
     <FlipCard
-      front-title="Fabulous Trading Experience"
+      title="Fabulous Trading Experience"
       :front-image="section5img.s5_icon_academy"
-      back-title="Fabulous Trading Experience"
       back-content="Leave Me" />
       <FlipCard
-      front-title="Fabulous Trading Experience"
+      title="24/7 Customer Support"
       :front-image="section5img.s5_icon_academy"
-      back-title="Fabulous Trading Experience"
       back-content="Leave Me" />
       <FlipCard
-      front-title="Fabulous Trading Experience"
+      title="Fabulous Trading Experience"
       :front-image="section5img.s5_icon_academy"
-      back-title="Fabulous Trading Experience"
       back-content="Leave Me" />
       <FlipCard
-      front-title="Fabulous Trading Experience"
+      title="Fabulous Trading Experience"
       :front-image="section5img.s5_icon_academy"
-      back-title="Fabulous Trading Experience"
       back-content="Leave Me" />
   </div>
 </template>

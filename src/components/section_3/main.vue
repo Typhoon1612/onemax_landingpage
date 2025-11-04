@@ -1,6 +1,5 @@
 <script setup lang="ts">
   import ConceptVidImg from "./components/concept_vid_img.vue";
-  import HackingRain from "../general/hackingRain.vue";
   import { section3 as section3Images } from "../../helper_files/images";
   import { section3 as section3Videos } from "../../helper_files/videos";
   import { ref, onMounted } from "vue";
@@ -33,7 +32,6 @@
 
 <template>
   <section class="section3-container">
-    <HackingRain class="background-rain" />
     <!-- Header -->
     <div class="section3-header">
       <h1
@@ -119,7 +117,7 @@
 
   .section3-container {
     width: 100%;
-    background: #000;
+    background: transparent;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -127,16 +125,6 @@
     justify-content: center;
     padding: 2rem 2rem;
     position: relative;
-  }
-
-  .background-rain {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-    opacity: 0.3;
   }
 
   .section3-header {
