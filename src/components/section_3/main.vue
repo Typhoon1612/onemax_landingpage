@@ -117,22 +117,25 @@
 
   .section3-container {
     width: 100%;
-    background: #000;
+    background: transparent;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: 2rem 2rem;
+    position: relative;
   }
 
   .section3-header {
     text-align: center;
     margin-bottom: 2rem;
+    position: relative;
+    z-index: 1;
   }
 
   .section3-header-title {
-    font-family: "Orbitron", monospace;
+    font-family: "Inter", monospace;
     font-size: clamp(2rem, 5vw, 5rem);
     font-weight: 900;
     color: #fff;
@@ -148,6 +151,8 @@
     justify-content: center;
     padding: 5rem 0 5rem 0rem;
     gap: 6rem;
+    position: relative;
+    z-index: 1;
   }
 
   .section3-text-left .section3-text-right {
@@ -166,7 +171,7 @@
   }
 
   .section3-title {
-    font-family: "Orbitron", monospace;
+    font-family: "Inter", monospace;
     font-size: clamp(2.5rem, 6vw, 4rem);
     font-weight: 900;
     color: #fff;

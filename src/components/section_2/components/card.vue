@@ -1,5 +1,6 @@
 <script lang="ts" setup>
-  import { defineProps, computed, onMounted, ref, onBeforeUnmount } from "vue";
+import { defineProps, computed, onMounted, ref, onBeforeUnmount } from "vue";
+  import { section2 as section2Vid } from "../../../helper_files/videos";
   import axios from "axios";
 
   // Props
@@ -54,6 +55,10 @@
 
 <template>
   <div class="crypto-card">
+   <img
+      :src="section2Vid.s2_graph"
+      alt="Graph background"
+      class="bg-graph" />
     <div class="card-content">
       <div class="top-row">
         <img
@@ -77,8 +82,20 @@
 </template>
 
 <style scoped>
+  .bg-graph {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    opacity: 0.3;
+  }
+
   .crypto-card {
     background: #2a2d3a;
+    opacity: 0.8;
     border-radius: 12px;
     padding: 2rem;
     width: 320px;
@@ -94,11 +111,13 @@
   }
 
   .card-content {
+    position: relative;
     display: flex;
     flex-direction: column;
     gap: 2rem;
     height: 100%;
     justify-content: space-between;
+    z-index: 2;
   }
 
   .top-row {

@@ -1,7 +1,8 @@
 <script setup lang="ts">
   import Section1 from "./components/section_1/main.vue";
-  import Section2 from "./components/section_2/main.vue";
-  import Section3 from "./components/section_3/main.vue";
+  import Sections23Wrapper from "./components/general/sections_2_3_wrapper.vue";
+  import Section4 from "./components/section_4/main.vue";
+  // import Section5 from "./components/section_5/main.vue";
   import Section7 from "./components/section_7/main.vue";
   import Footer from "./components/general/footer.vue";
 </script>
@@ -9,8 +10,9 @@
 <template>
   <div id="app">
     <Section1 />
-    <Section2 />
-    <Section3 />
+    <Sections23Wrapper />
+    <Section4 />
+    <!-- <Section5 /> -->
     <Section7 />
     <Footer />
   </div>
