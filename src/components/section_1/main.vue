@@ -15,7 +15,7 @@
       muted
       playsinline></video>
 
-    White panel overlay
+    <!-- White panel overlay -->
     <div class="white-panel"></div>
 
     <!-- Navbar -->
@@ -38,7 +38,9 @@
           intelligent analytics, and
           <span style="color: #7b61ff">effortless setup</span>.
         </p>
+        <a href="https://www.1max.com/en_US/register">
         <SciFiBtn />
+        </a>
       </div>
     </div>
   </section>
