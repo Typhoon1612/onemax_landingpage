@@ -136,8 +136,8 @@
 
   .section3-header-title {
     font-family: "Inter", monospace;
-    font-size: clamp(2rem, 5vw, 5rem);
-    font-weight: 900;
+    font-size: clamp(5rem, 10vw, 6rem);
+    font-weight: bolder;
     color: #fff;
     margin: 0;
     letter-spacing: 0.05em;
