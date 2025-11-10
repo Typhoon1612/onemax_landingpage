@@ -25,8 +25,9 @@
 <style scoped>
   .concept-vid-img {
     position: relative;
-    width: 340px;
-    height: 360px;
+    width: 600px;
+    height: 620px;
+    left: 100px;
     display: flex;
     align-items: center;
     justify-content: center;

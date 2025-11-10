@@ -1,5 +1,6 @@
 <script lang="ts" setup>
   import FlipCard from "./components/flipCard.vue";
+  import LongCard from "./components/longCard.vue";
   import { section5 as section5img } from "../../helper_files/images";
 </script>
 
@@ -10,24 +11,27 @@
       our users
     </h1>
   </div>
-  <div class="flip-card-container">
+  <div class="card-container">
     <FlipCard
       title="Fabulous Trading Experience"
       :front-image="section5img.s5_icon_academy"
       back-content="Leave Me" />
-      <FlipCard
+    <FlipCard
       title="24/7 Customer Support"
       :front-image="section5img.s5_icon_academy"
       back-content="Leave Me" />
-      <FlipCard
-      title="Fabulous Trading Experience"
+    <FlipCard
+      title="Security and Compliance"
       :front-image="section5img.s5_icon_academy"
       back-content="Leave Me" />
-      <FlipCard
-      title="Fabulous Trading Experience"
+    <FlipCard
+      title="Global Reach"
       :front-image="section5img.s5_icon_academy"
       back-content="Leave Me" />
+
+    <LongCard />
   </div>
+  <!-- <div class="long-card-container"><LongCard  /></div> -->
 </template>
 
 <style scoped>
@@ -38,11 +42,49 @@
     font-size: clamp(2rem, 4vw, 4rem);
   }
 
-  .flip-card-container {
-    display: flex;
-    justify-content: center;
+  .card-container {
+    display: grid;
+    grid-template-columns: repeat(4, 340px);
     gap: 40px;
-    flex-wrap: wrap;
-    padding-bottom: 100px;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 50px;
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .card-container > :last-child {
+      grid-column: 1/-1;
+    }
+
+  .long-card-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 0 50px 100px;
+  }
+
+  @media (max-width: 1519px) {
+    .card-container {
+      grid-template-columns: repeat(2, 340px);
+      max-width: 340px;
+    }
+
+    .card-container > :last-child {
+      grid-column: 1/-1;
+    }
+  }
+
+  @media (max-width: 739px) {
+    .card-container {
+      grid-template-columns: 1fr;
+      max-width: 340px;
+    }
+
+    .card-container > :last-child {
+      grid-column: 1/-1;
+    }
   }
 </style>
