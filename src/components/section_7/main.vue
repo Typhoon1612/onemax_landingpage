@@ -138,7 +138,7 @@
     padding: 2.25rem 2.75rem; /* slightly bigger */
     box-shadow: 0 2px 16px rgba(0, 0, 0, 0.18);
     margin-bottom: 2.25rem;
-    margin-left: 3.5rem; /* move slightly to the right */
+    /* margin-left: 3.5rem; move slightly to the right */
   }
   .qr-img {
     width: 160px;

@@ -9,6 +9,10 @@
   const storeRef = ref<HTMLElement>();
   const connectRef = ref<HTMLElement>();
 
+  const goToRegister = () => {
+    window.location.href = "https://www.1max.com/en_US/register";
+  };
+
   onMounted(() => {
     const observerOptions = {
       threshold: 0.2,
@@ -56,6 +60,7 @@
           informed with live price tracking and personalized insights for your
           Web3 strategy.
         </p>
+        <button @click="goToRegister">Register Now</button>
       </div>
       <div class="section3-img-vid-right">
         <ConceptVidImg
@@ -83,7 +88,7 @@
           seamless access, smart tools, and complete control over your Web3
           portfolio.
         </p>
-        <
+        <button @click="goToRegister">Register Now</button>
       </div>
     </div>
     <!-- Connect -->
@@ -102,6 +107,7 @@
           simple, one-tap access to a truly connected Web3 experience. Built for
           interoperability with Ethereum, BNB Smart Chain, Polygon, and more.
         </p>
+        <button @click="goToRegister">Register Now</button>
       </div>
       <div class="section3-img-vid-right">
         <ConceptVidImg
@@ -221,8 +227,51 @@
       transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
     will-change: opacity, transform;
   }
+
   .animate-section.animate-in {
     opacity: 1;
     transform: translateY(0);
+  }
+
+  button {
+    display: inline-block;
+    padding: 1rem 3rem;
+    font-size: 1.3rem;
+    font-weight: 550;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, border 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 24px 0 rgba(123, 97, 255, 0.15);
+    border: 2px solid transparent;
+    background: #7b61ff;
+    color: #fff;
+    margin-top: 2rem;
+  }
+  button:hover {
+    background: transparent;
+    color: #7b61ff;
+    border: 2px solid #7b61ff;
+    box-shadow: none;
+  }
+  button:active {
+    background: #7b61ff;
+    color: #fff;
+    border: 2px solid transparent;
+    box-shadow: 0 4px 24px 0 rgba(123, 97, 255, 0.15);
+  }
+  button.outline {
+    background: transparent;
+    color: #7b61ff;
+    border: 2px solid #7b61ff;
+    box-shadow: none;
+  }
+  button.outline:hover {
+    background: #7b61ff;
+    color: #fff;
+    border: 2px solid transparent;
+  }
+  button--block {
+    display: block;
+    width: 100%;
   }
 </style>
