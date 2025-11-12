@@ -48,7 +48,7 @@
   .concept-vid-right {
     position: absolute;
     top: 0;
-    left: 50%;
+    left: 60%;
     transform: translateX(-50%);
     height: 100%;
     object-fit: cover;
@@ -64,7 +64,7 @@
   .concept-vid-left {
     position: absolute;
     top: 0;
-    right: 50%;
+    right: 60%;
     transform: translateX(50%);
     height: 100%;
     object-fit: cover;

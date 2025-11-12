@@ -177,6 +177,7 @@
 
   .section3-img-vid-right .section3-img-vid-left {
     flex: 1 1 0;
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -253,7 +254,7 @@
       align-items: center;
     }
 
-    .section3-description {
+    .section3-description{
       padding: 0 1rem;
     }
   }
