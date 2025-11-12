@@ -65,7 +65,9 @@
       <div class="section3-img-vid-right">
         <ConceptVidImg
           :video-link="section3Videos.s3_analyse_video"
-          :image-link="section3Images.s3_analyse_image" />
+          :image-link="section3Images.s3_analyse_image"
+          video-direction="concept-vid-right"
+          img-video-c-s-s-class="concept-vid-img concept-vid-img-right" />
       </div>
     </div>
     <!-- Store -->
@@ -78,7 +80,9 @@
         ref="rightSection">
         <ConceptVidImg
           :video-link="section3Videos.s3_store_video"
-          :image-link="section3Images.s3_store_image" />
+          :image-link="section3Images.s3_store_image"
+          video-direction="concept-vid-left"
+          img-video-c-s-s-class="concept-vid-img concept-vid-img-left" />
       </div>
       <div class="section3-text-right">
         <h1 class="section3-title">/Store</h1>
@@ -112,7 +116,9 @@
       <div class="section3-img-vid-right">
         <ConceptVidImg
           :video-link="section3Videos.s3_connect_video"
-          :image-link="section3Images.s3_connect_image" />
+          :image-link="section3Images.s3_connect_image"
+          video-direction="concept-vid-right"
+          img-video-c-s-s-class="concept-vid-img concept-vid-img-right" />
       </div>
     </div>
   </section>
@@ -129,7 +135,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 2rem 2rem;
+    padding: 2rem 10rem;
     position: relative;
   }
 
@@ -156,12 +162,12 @@
     align-items: center;
     justify-content: center;
     padding: 5rem 0 5rem 0rem;
-    gap: 6rem;
+    gap: 4rem;
     position: relative;
     z-index: 1;
   }
 
-  .section3-text-left .section3-text-right {
+  .section3-text-right .section3-text-left {
     flex: 1 1 0;
     display: flex;
     flex-direction: column;
@@ -193,13 +199,41 @@
     font-weight: 400;
   }
 
-  @media (max-width: 900px) {
+  @media (max-width: 1260px) {
+    .section3-content {
+      gap: clamp(1.5rem, 3vw, 2.5rem);
+      padding: 3.5rem 1.5rem;
+      justify-content: space-between;
+    }
+
+    .section3-text-left,
+    .section3-text-right {
+      max-width: 500px;
+    }
+  }
+
+  @media (max-width: 1080px) {
+    .section3-content {
+      gap: clamp(1rem, 2.5vw, 2rem);
+      padding: 3rem 1.25rem;
+    }
+
+    .section3-text-left,
+    .section3-text-right {
+      max-width: 460px;
+    }
+  }
+
+  @media (max-width: 1000px) {
     .section3-container {
       padding: 0rem 0rem;
       min-height: auto;
     }
     .section3-header {
       margin-bottom: 2rem;
+    }
+    .section3-header-title {
+      font-size: clamp(3.25rem, 14vw, 4.25rem);
     }
     .section3-content {
       flex-direction: column;
@@ -217,6 +251,15 @@
       order: 2;
       text-align: center;
       align-items: center;
+    }
+
+    .section3-description {
+      padding: 0 1rem;
+    }
+  }
+  @media (max-width: 600px) {
+    .section3-header-title {
+      font-size: clamp(2rem, 10vw, 2.5rem);
     }
   }
   /* Animation styles */

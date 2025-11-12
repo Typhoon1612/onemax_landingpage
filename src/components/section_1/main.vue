@@ -30,17 +30,22 @@
     <div class="section1-content">
       <div class="section1-heroText">
         <h1 class="headline-text">
-          <span style="color: #7b61ff">Smarter</span> Tools.
-          <span style="color: #7b61ff">Faster</span> Decisions
+          <span style="color: #7b61ff">Trade</span> Smarter. Move<span
+            style="color: #7b61ff"
+            > Faster.</span
+          >
         </h1>
         <p class="subheadline-text">
-          Access <span style="color: #7b61ff">advanced market tools</span>,
+          <span style="color: #7b61ff">Experience </span> lightning-fast
+          <span style="color: #7b61ff">trading</span> with
+          <span style="color: #7b61ff">next-gen tools.</span>
+          <!-- Access <span style="color: #7b61ff">advanced market tools</span>,
           intelligent analytics, and
-          <span style="color: #7b61ff">effortless setup</span>.
+          <span style="color: #7b61ff">effortless setup</span>. -->
         </p>
-        <a href="https://www.1max.com/en_US/register">
-        <SciFiBtn />
-        </a>
+        <div>
+          <SciFiBtn />
+        </div>
       </div>
     </div>
   </section>
@@ -134,5 +139,29 @@
     color: #ffffff;
     font-family: "Inter", sans-serif;
     width: 100%;
+  }
+
+  @media (max-width: 800px) {
+    .headline-text {
+      padding: 0 1rem 3rem;
+      font-size: clamp(2rem, 7vw, 3.5rem);
+    }
+
+    .subheadline-text {
+      padding: 0 1rem;
+      font-size: clamp(1.5rem, 6vw, 1.2rem);
+    }
+    
+  }
+
+  @media (max-width: 600px) {
+    .headline-text {
+      font-size: clamp(2rem, 6.5vw, 2.9rem);
+    }
+
+    .subheadline-text {
+      font-size: clamp(1.2rem, 3.4vw, 1.5rem);
+    }
+    
   }
 </style>
