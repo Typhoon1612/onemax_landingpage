@@ -49,12 +49,8 @@ import s5_icon_support from "@/assets/section_5/s5-icon-support.svg";
 // ------------------------------
 // SECTION 6
 // ------------------------------
-
-// ------------------------------
-// SECTION 7
-// ------------------------------
-import s7_apps_barcode from "@/assets/section_7/s7-apps-barcode.png";
-import s7_concept_img from "@/assets/section_7/s7-concept-img.png";
+import s6_apps_barcode from "@/assets/section_6/s6-apps-barcode.png";
+import s6_concept_img from "@/assets/section_6/s6-concept-img.png";
 
 // ------------------------------
 // EXPORT ALL AS GROUPED OBJECTS
@@ -101,9 +97,9 @@ export const section5 = {
   s5_icon_support,
 };
 
-export const section7 = {
-  s7_apps_barcode,
-  s7_concept_img,
+export const section6 = {
+  s6_apps_barcode,
+  s6_concept_img,
 };
 
 // ------------------------------
@@ -115,7 +111,7 @@ const images = {
   section3,
   section4,
   section5,
-  section7,
+  section6,
 };
 
 export default images;

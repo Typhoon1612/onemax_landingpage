@@ -28,11 +28,12 @@
 
 <style scoped>
   .concept-vid-img {
-    position: relative;
-    width: 600px;
-    height: 620px;
+    position: relative; /* ← Need this for absolute children */
+    width: 520px;
+    height: 540px;
     display: flex;
     align-items: center;
+    
     justify-content: center;
   }
   .concept-img {
@@ -77,17 +78,17 @@
     -webkit-transform: translateZ(0);
   }
 
-  @media (max-width: 860px) {
+  @media (max-width: 1200px) {
     .concept-vid-img {
       width: 420px;
       height: 460px;
     }
 
-     .concept-vid-img-left{
+    .concept-vid-img-left {
       left: 20%;
     }
 
-    .concept-vid-img-right{
+    .concept-vid-img-right {
       right: 20%;
     }
 
