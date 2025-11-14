@@ -69,7 +69,7 @@
         <h1
           class="headline-text headlines-animate-section"
           ref="headlineRef">
-          <span style="color: #7b61ff">Trade</span> Smarter. Move<span
+          <span style="color: #7b61ff">Track</span> Smarter. Move<span
             style="color: #7b61ff">
             Faster.</span
           >
@@ -78,7 +78,7 @@
           class="subheadline-text headlines-animate-section"
           ref="subheadlineRef">
           <span style="color: #7b61ff">Experience </span> lightning-fast
-          <span style="color: #7b61ff">trading</span> with
+          <span style="color: #7b61ff">precision</span> with
           <span style="color: #7b61ff">next-gen tools.</span>
           <!-- Access <span style="color: #7b61ff">advanced market tools</span>,
           intelligent analytics, and

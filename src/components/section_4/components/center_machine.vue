@@ -395,7 +395,7 @@
   }
 
   .holo-checkbox-input:checked ~ .status-text::before {
-    content: "Keywords of us";
+    content: "1MAX Activated";
     color: #7b61ffe2;
     text-shadow: 0 0 5px #7b61ff95;
   }
@@ -859,7 +859,7 @@
 
   @media (max-width: 800px) {
     .section4-content {
-      transform: scale(1);
+      transform: scale(0.9);
     }
 
     .checkbox-container {
@@ -960,12 +960,12 @@
 
         <div class="data-chips">
           <div class="data-chip">Web3</div>
-          <div class="data-chip">Future 125x</div>
-          <div class="data-chip">Spot</div>
+          <div class="data-chip">Charts</div>
+          <div class="data-chip">Education</div>
           <div class="data-chip">Blockchain</div>
           <div class="data-chip">Crypto</div>
-          <div class="data-chip">Tokens</div>
-          <div class="data-chip">CEX</div>
+          <div class="data-chip">Market</div>
+          <div class="data-chip">Tools</div>
         </div>
       </div>
     </div>
