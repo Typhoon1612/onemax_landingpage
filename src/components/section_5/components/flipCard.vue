@@ -12,14 +12,14 @@
   <div class="flip-card">
     <div class="flip-card-inner">
       <div class="flip-card-front">
-        <p class="title">{{ props.title }}</p>
+        <h1 class="title">{{ props.title }}</h1>
         <img
           :src="props.frontImage"
           alt="Flip Card Image" />
       </div>
       <div class="flip-card-back">
         <p class="title">{{ props.title }}</p>
-        <p>{{ props.backContent }}</p>
+        <p class="back-contents">{{ props.backContent }}</p>
       </div>
     </div>
   </div>
@@ -38,6 +38,7 @@
     position: absolute;
     left: 10%;
     top: 10%;
+    right:10%;
     font-size: 1.5em;
     font-weight: 700;
     text-align: start;
@@ -88,7 +89,6 @@
 
   .flip-card-back {
     background: rgba(255, 255, 255, 0.147);
-
     color: white;
     transform: rotateY(180deg);
     align-items: flex-start;
@@ -101,7 +101,17 @@
     text-align: start;
   }
 
-  .flip-card-back p:not(.title) {
-    padding-top: 2.5rem;
+  .back-contents {
+    font-size: 1em;
+    font-weight: 400;
+    line-height: 1.5em;
+    padding-top: 35%;
   }
+
+   /* @media (max-width: 739px) {
+    .flip-card {
+      width:70%;
+      max-width: 340px;
+    }
+  } */
 </style>

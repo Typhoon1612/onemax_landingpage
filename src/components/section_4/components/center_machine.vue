@@ -1,12 +1,12 @@
 <style scoped>
   .section4-container {
     width: 100%;
-    height: 120vh;
+    height: 100vh; /* Default for all screens */
     background: #000000;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 2rem;
+    padding: 2rem 0 6rem;
     position: relative;
     overflow: hidden;
   }
@@ -136,10 +136,7 @@
     height: 200%;
     top: -50%;
     left: -50%;
-    background-image: linear-gradient(
-        #7b61ff 1px,
-        transparent 1px
-      ),
+    background-image: linear-gradient(#7b61ff 1px, transparent 1px),
       linear-gradient(90deg, #7b61ff 1px, transparent 1px);
     background-size: 40px 40px;
     transform: perspective(500px) rotateX(60deg);
@@ -259,8 +256,7 @@
 
   .holo-checkbox-input:checked + .holo-checkbox .holo-box {
     border-color: #7b61ffc3;
-    box-shadow: 0 0 10px #7b61ff93,
-      inset 0 0 15px #7b61ff4d;
+    box-shadow: 0 0 10px #7b61ff93, inset 0 0 15px #7b61ff4d;
   }
 
   .holo-checkbox-input:checked + .holo-checkbox .holo-inner {
@@ -273,12 +269,7 @@
   .holo-checkbox-input:checked + .holo-checkbox .scan-effect {
     animation: scan-on 2s infinite;
     opacity: 1;
-    background: linear-gradient(
-      90deg,
-      transparent,
-      #7b61ffc5,
-      transparent
-    );
+    background: linear-gradient(90deg, transparent, #7b61ffc5, transparent);
   }
 
   .holo-glow {
@@ -316,7 +307,7 @@
     background: radial-gradient(
       ellipse at center,
       #7b61ff4f 0%,
-    #7b61ff32 40%,
+      #7b61ff32 40%,
       rgba(0, 0, 0, 0) 70%
     );
     animation: active-glow-pulse 2s infinite alternate;
@@ -828,9 +819,21 @@
   }
 
   /* Responsive design */
-  @media (max-width: 768px) {
-    .section4-container{
-      height: 100vh;
+
+  @media (min-height: 800px) {
+    .section4-container {
+      height: 90vh;
+    }
+  }
+
+  @media (max-height: 799px) {
+    .section4-container {
+      height: 120vh;
+    }
+  }
+
+  @media (max-width: 900px) {
+    .section4-container {
       align-items: flex-start;
     }
     .section4-content {
@@ -844,20 +847,19 @@
       height: 350px;
     }
     .data-chips {
-      top:100%;
-      display:flex;
+      top: 100%;
+      display: flex;
       flex-direction: column;
-      gap:20px;
+      gap: 20px;
     }
-    .data-chip{
-      position:static;
+    .data-chip {
+      position: static;
     }
   }
 
-  @media (max-width: 480px) {
+  @media (max-width: 800px) {
     .section4-content {
       transform: scale(1);
-      height: 400px;
     }
 
     .checkbox-container {

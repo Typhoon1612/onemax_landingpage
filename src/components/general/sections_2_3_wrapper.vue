@@ -1,7 +1,7 @@
-<script setup lang="ts">
+<!-- <script setup lang="ts">
   import Section2 from "../section_2/main.vue";
   import Section3 from "../section_3/main.vue";
-  import HackingRain from "./hackingRain.vue";
+  import HackingRain from "../loading_page/hackingRain.vue";
 </script>
 
 <template>
@@ -31,4 +31,4 @@
     opacity: 1;
     pointer-events: none;
   }
-</style>
+</style> -->
