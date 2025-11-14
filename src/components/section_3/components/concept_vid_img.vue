@@ -1,6 +1,4 @@
 <script setup lang="ts">
-  import { ref } from "vue";
-
   const props = defineProps<{
     videoLink?: string;
     imageLink?: string;
@@ -33,7 +31,7 @@
     height: 540px;
     display: flex;
     align-items: center;
-    
+
     justify-content: center;
   }
   .concept-img {
