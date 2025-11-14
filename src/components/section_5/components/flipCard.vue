@@ -38,7 +38,7 @@
     position: absolute;
     left: 10%;
     top: 10%;
-    right:10%;
+    right: 10%;
     font-size: 1.5em;
     font-weight: 700;
     text-align: start;
@@ -80,10 +80,10 @@
 
   .flip-card-front img {
     position: absolute;
-    bottom: 10px;
-    right: 10px;
-    width: 60px;
-    height: 60px;
+    bottom: 0px;
+    right: 0px;
+    width: 250px;
+    height: 250px;
     object-fit: contain;
   }
 
@@ -108,7 +108,32 @@
     padding-top: 35%;
   }
 
-   /* @media (max-width: 739px) {
+  @media (max-width: 400px) {
+    .flip-card {
+      width: 280px;
+      height: 320px;
+    }
+
+    .title {
+      font-size: 1.2em;
+      left: 8%;
+      right: 8%;
+    }
+
+    .flip-card-front img {
+      width: 180px;
+      height: 180px;
+      bottom: 5px;
+      right: 5px;
+    }
+
+    .back-contents {
+      font-size: 0.9em;
+      padding-top: 30%;
+    }
+  }
+
+  /* @media (max-width: 739px) {
     .flip-card {
       width:70%;
       max-width: 340px;

@@ -16,7 +16,7 @@
     font-size: 25px;
     font-family: 'Orbitron', sans-serif;
     text-align: center;
-    text-shadow: 0 0 5px #7b61ff;
+    text-shadow: 0 0 5px #ff61e6;
     animation:
       matrix-fall 2s infinite,
       matrix-flicker 0.5s infinite;
@@ -47,6 +47,9 @@
   .digit:nth-child(8) {
     animation-delay: 1.5s;
   }
+  .digit:nth-child(9) {
+    animation-delay: 1.7s;
+  }
 
   .glow {
     position: absolute;
@@ -56,7 +59,7 @@
     bottom: 0;
     background: radial-gradient(
       circle,
-      #7b61ff2f 0%,
+      #ff61e728 0%,
       transparent 70%
     );
     animation: matrix-pulse 2s infinite;
@@ -110,6 +113,7 @@
     <div class="digit">1</div>
     <div class="digit">0</div>
     <div class="digit">0</div>
+    <div class="digit">1</div>
     <div class="digit">1</div>
     <div class="glow"></div>
   </div>

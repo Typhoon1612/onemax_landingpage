@@ -45,6 +45,12 @@ import s4_icon_wallet from "@/assets/section_4/s4-icon-wallet.svg";
 import s5_icon_academy from "@/assets/section_5/s5-icon-academy.svg";
 import s5_icon_community from "@/assets/section_5/s5-icon-community.svg";
 import s5_icon_support from "@/assets/section_5/s5-icon-support.svg";
+import s5_icon_cs from "@/assets/section_5/s5-icon-cs.png";
+import s5_icon_fte from "@/assets/section_5/s5-icon-fte.png";
+import s5_icon_global from "@/assets/section_5/s5-icon-global.png";
+import s5_icon_security from "@/assets/section_5/s5-icon-security.png";
+import s5_icon_tokens from "@/assets/section_5/s5-icon-tokens.png";
+
 
 // ------------------------------
 // SECTION 6
@@ -95,6 +101,11 @@ export const section5 = {
   s5_icon_academy,
   s5_icon_community,
   s5_icon_support,
+  s5_icon_cs,
+  s5_icon_fte,
+  s5_icon_global,
+  s5_icon_security,
+  s5_icon_tokens,
 };
 
 export const section6 = {

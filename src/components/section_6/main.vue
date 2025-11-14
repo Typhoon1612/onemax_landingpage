@@ -60,14 +60,14 @@
         </h3>
         <div class="social-buttons">
           <a
-            href="https://x.com/1max"
+            href="https://x.com/1MAX_GLOBAL"
             target="_blank"
             class="social-btn x-twitter">
             <span class="fa-brands fa-x-twitter"></span>
             <span class="social-label">X</span>
           </a>
           <a
-            href="https://t.me/1max"
+            href="https://t.me/onemaxchannel"
             target="_blank"
             class="social-btn telegram">
             <span class="fa-brands fa-telegram"></span>
@@ -81,7 +81,7 @@
             <span class="social-label">LinkedIn</span>
           </a>
           <a
-            href="https://instagram.com/1max"
+            href="https://www.instagram.com/1max_global/"
             target="_blank"
             class="social-btn instagram">
             <span class="fa-brands fa-instagram"></span>
@@ -272,6 +272,7 @@
   .social-btn {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 0.75rem;
     padding: 0.9rem 1.8rem;
     background: rgba(123, 97, 255, 0.1);
@@ -379,6 +380,7 @@
       align-items: center;
     }
     .social-buttons {
+      flex-direction: column;
       justify-content: center;
       gap: 1rem;
     }
