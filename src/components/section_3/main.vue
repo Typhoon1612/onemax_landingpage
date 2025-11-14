@@ -41,7 +41,7 @@
       <h1
         class="section3-header-title animate-section"
         ref="headingRef">
-        <span class="top">Top</span> <span class="features">Features</span>
+        <span class="glow-pulse">Top</span> <span class="gradient-shift">Features</span>
       </h1>
     </div>
     <!-- Analyse -->
@@ -52,7 +52,7 @@
       <div
         class="section3-text-left"
         ref="leftSection">
-        <h1 class="section3-title">/Analyse</h1>
+        <h1 class="section3-title glow-pulse">/Analyse</h1>
         <p class="section3-description">
           Track and analyze your digital portfolio in real time with advanced
           analytics. Monitor market trends, view detailed performance data, and
@@ -85,7 +85,7 @@
           img-video-c-s-s-class="concept-vid-img concept-vid-img-left" />
       </div>
       <div class="section3-text-right">
-        <h1 class="section3-title">/Store</h1>
+        <h1 class="section3-title glow-pulse">/Store</h1>
         <p class="section3-description">
           Built for the future of finance, 1MAX Wallet lets you manage BTC, ETH,
           USDT, and other digital assets in one powerful ecosystem. Experience
@@ -103,7 +103,7 @@
       <div
         class="section3-text-left"
         ref="leftSection">
-        <h1 class="section3-title">/Connect</h1>
+        <h1 class="section3-title glow-pulse">/Connect</h1>
         <p class="section3-description">
           Effortlessly connect to a world of decentralized applications across
           multiple networks. Explore Web3 services all from one secure
@@ -153,8 +153,8 @@
     letter-spacing: 0.05em;
   }
 
-  .section3-header-title .top {
-    background: linear-gradient(135deg, #7b61ff 0%, #ff61e6 50%, #61d4ff 100%);
+  .glow-pulse {
+    background: linear-gradient(135deg, #ff61e6 0%, #7b61ff 60%, #61d4ff 100%);
     background-size: 200% 200%;
     background-clip: text;
     -webkit-background-clip: text;
@@ -162,7 +162,7 @@
     animation: gradient-shift 3s ease infinite;
   }
 
-  .section3-header-title .features {
+  .gradient-shift {
     color: #fff;
     text-shadow: 0 0 20px rgba(255, 255, 255, 0.8),
       0 0 40px rgba(123, 97, 255, 0.6);
