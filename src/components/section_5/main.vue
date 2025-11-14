@@ -7,8 +7,9 @@
 <template>
   <div>
     <h1>
-      A <span style="color: #7b61ff">cryptocurrency exchange</span> trusted by
-      our users
+      <span class="glow-text">A </span>
+      <span class="crypto-gradient">cryptocurrency exchange </span>
+      <span class="glow-text">trusted by our users</span>
     </h1>
   </div>
   <div class="card-container">
@@ -36,10 +37,52 @@
 
 <style scoped>
   h1 {
+    font-family: "Inter", sans-serif;
+    font-weight: 900;
     color: #fff;
     text-align: center;
     padding: 100px 0;
-    font-size: clamp(2rem, 4vw, 4rem);
+    font-size: clamp(1rem, 3vw, 3rem);
+    letter-spacing: 0.05em;
+  }
+
+  h1 .crypto-gradient {
+    background: linear-gradient(135deg, #7b61ff 0%, #ff61e6 50%, #61d4ff 100%);
+    background-size: 200% 200%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradient-shift 3s ease infinite;
+  }
+
+  h1 .glow-text {
+    color: #fff;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.8),
+      0 0 40px rgba(123, 97, 255, 0.6);
+    animation: glow-pulse 2s ease-in-out infinite alternate;
+  }
+
+  @keyframes gradient-shift {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  @keyframes glow-pulse {
+    0% {
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.5),
+        0 0 20px rgba(123, 97, 255, 0.4);
+    }
+    100% {
+      text-shadow: 0 0 5px rgba(255, 255, 255, 1),
+        0 0 15px rgba(123, 97, 255, 0.8), 0 0 20px rgba(123, 97, 255, 0.6);
+    }
   }
 
   .card-container {

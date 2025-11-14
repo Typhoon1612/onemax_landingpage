@@ -16,5 +16,6 @@
     position: relative;
     overflow: hidden;
     isolation: isolate;
+    padding: 5rem 0 5rem 0;
   }
 </style>

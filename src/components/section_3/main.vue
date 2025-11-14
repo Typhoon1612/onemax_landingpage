@@ -41,7 +41,7 @@
       <h1
         class="section3-header-title animate-section"
         ref="headingRef">
-        Top Features
+        <span class="top">Top</span> <span class="features">Features</span>
       </h1>
     </div>
     <!-- Analyse -->
@@ -146,12 +146,60 @@
   }
 
   .section3-header-title {
-    font-family: "Inter", monospace;
+    font-family: "Inter", sans-serif;
     font-size: clamp(5rem, 10vw, 6rem);
-    font-weight: bolder;
-    color: #fff;
+    font-weight: 900;
     margin: 0;
     letter-spacing: 0.05em;
+  }
+
+  .section3-header-title .top {
+    background: linear-gradient(135deg, #7b61ff 0%, #ff61e6 50%, #61d4ff 100%);
+    background-size: 200% 200%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradient-shift 3s ease infinite;
+  }
+
+  .section3-header-title .features {
+    color: #fff;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.8),
+      0 0 40px rgba(123, 97, 255, 0.6);
+    animation: glow-pulse 2s ease-in-out infinite alternate;
+  }
+
+  @keyframes gradient-shift {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  @keyframes glow-pulse {
+    0% {
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.5),
+        0 0 20px rgba(123, 97, 255, 0.4);
+    }
+    100% {
+      text-shadow: 0 0 5px rgba(255, 255, 255, 1),
+        0 0 15px rgba(123, 97, 255, 0.8), 0 0 20px rgba(123, 97, 255, 0.6);
+    }
+  }
+
+  @keyframes title-shimmer {
+    0%,
+    100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
   }
 
   .section3-content {
@@ -160,7 +208,7 @@
     display: flex;
     align-items: center;
     position: relative;
-    padding: 5rem 0 5rem 0;
+    padding: 15rem 0 15rem 0;
     z-index: 1;
   }
 

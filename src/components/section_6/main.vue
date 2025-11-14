@@ -40,7 +40,9 @@
       class="section7-center"
       ref="centerSection">
       <h1 class="section7-title">
-        Experience <span style="color: #7b61ff">1Max</span>. Anywhere, anytime.
+        <span class="glow-text">Experience </span>
+        <span class="gradient-text">1MAX</span
+        ><span class="glow-text">. Anywhere, anytime.</span>
       </h1>
       <div class="qr-block">
         <img
@@ -52,14 +54,39 @@
           <div class="qr-platforms">iOS and Android</div>
         </div>
       </div>
-      <div class="platform-icons">
-        <div class="platform">
-          <span class="fa-brands fa-apple platform-icon"></span>
-          <span class="platform-label">iOS</span>
-        </div>
-        <div class="platform">
-          <span class="fa-brands fa-android platform-icon"></span>
-          <span class="platform-label">Android</span>
+      <div class="social-links">
+        <h3 class="social-title">
+          <span class="follow">Follow</span> <span class="us">Us</span>
+        </h3>
+        <div class="social-buttons">
+          <a
+            href="https://x.com/1max"
+            target="_blank"
+            class="social-btn x-twitter">
+            <span class="fa-brands fa-x-twitter"></span>
+            <span class="social-label">X</span>
+          </a>
+          <a
+            href="https://t.me/1max"
+            target="_blank"
+            class="social-btn telegram">
+            <span class="fa-brands fa-telegram"></span>
+            <span class="social-label">Telegram</span>
+          </a>
+          <a
+            href="https://linkedin.com/company/1max"
+            target="_blank"
+            class="social-btn linkedin">
+            <span class="fa-brands fa-linkedin"></span>
+            <span class="social-label">LinkedIn</span>
+          </a>
+          <a
+            href="https://instagram.com/1max"
+            target="_blank"
+            class="social-btn instagram">
+            <span class="fa-brands fa-instagram"></span>
+            <span class="social-label">Instagram</span>
+          </a>
         </div>
       </div>
     </div>
@@ -121,13 +148,29 @@
     transform: translateX(0);
   }
   .section7-title {
+    font-family: "Inter", sans-serif;
     font-size: clamp(1.8rem, 5vw, 3.5rem);
     line-height: 1.12;
-    font-weight: 800;
-    letter-spacing: 0.05rem;
-    color: #fff;
+    font-weight: 900;
+    letter-spacing: 0.05em;
     margin: 0 0 2.25rem 0;
     text-align: left;
+  }
+
+  .section7-title .gradient-text {
+    background: linear-gradient(135deg, #0dbeff 0%, #ff61e6 30%, #7b61ff 100%);
+    background-size: 200% 200%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradient-shift 3s ease infinite;
+  }
+
+  .section7-title .glow-text {
+    color: #fff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8),
+      0 0 20px rgba(123, 97, 255, 0.6);
+    animation: glow-pulse 2s ease-in-out infinite alternate;
   }
   .qr-block {
     display: flex;
@@ -164,6 +207,126 @@
     color: #d9d9d9;
     font-weight: 700;
   }
+
+  .social-links {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 1rem;
+  }
+
+  .social-title {
+    font-family: "Inter", sans-serif;
+    font-size: 2.5rem;
+    font-weight: 900;
+    margin: 0;
+    letter-spacing: 0.05em;
+  }
+
+  .social-title .follow {
+    background: linear-gradient(135deg, #7b61ff 0%, #ff61e6 50%, #61d4ff 100%);
+    background-size: 200% 200%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradient-shift 3s ease infinite;
+    text-shadow: 0 0 30px rgba(123, 97, 255, 0.5);
+  }
+
+  .social-title .us {
+    color: #fff;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.8),
+      0 0 40px rgba(123, 97, 255, 0.6);
+    animation: glow-pulse 2s ease-in-out infinite alternate;
+  }
+
+  @keyframes gradient-shift {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  @keyframes glow-pulse {
+    0% {
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.5),
+        0 0 20px rgba(123, 97, 255, 0.4);
+    }
+    100% {
+      text-shadow: 0 0 5px rgba(255, 255, 255, 1),
+        0 0 10px rgba(123, 97, 255, 0.8), 0 0 20px rgba(123, 97, 255, 0.6);
+    }
+  }
+
+  .social-buttons {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .social-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.9rem 1.8rem;
+    background: rgba(123, 97, 255, 0.1);
+    border: 2px solid #7b61ff;
+    border-radius: 50px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+
+  .social-btn:hover {
+    background: #7b61ff;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(123, 97, 255, 0.3);
+  }
+
+  .social-btn span.fa-brands {
+    font-size: 1.5rem;
+  }
+
+  .social-label {
+    font-size: 1rem;
+  }
+
+  /* Brand-specific colors on hover */
+  .social-btn.x-twitter:hover {
+    background: #000000;
+    border-color: #000000;
+  }
+
+  .social-btn.telegram:hover {
+    background: #0088cc;
+    border-color: #0088cc;
+  }
+
+  .social-btn.linkedin:hover {
+    background: #0a66c2;
+    border-color: #0a66c2;
+  }
+
+  .social-btn.instagram:hover {
+    background: linear-gradient(
+      45deg,
+      #f09433 0%,
+      #e6683c 25%,
+      #dc2743 50%,
+      #cc2366 75%,
+      #bc1888 100%
+    );
+    border-color: #e1306c;
+  }
+
   .platform-icons {
     display: flex;
     gap: 10rem; /* slightly tighter with two items */
@@ -211,6 +374,17 @@
     .qr-info {
       align-items: center;
       text-align: center;
+    }
+    .social-links {
+      align-items: center;
+    }
+    .social-buttons {
+      justify-content: center;
+      gap: 1rem;
+    }
+    .social-btn {
+      padding: 0.7rem 1.4rem;
+      font-size: 0.9rem;
     }
     .platform-icons {
       gap: 1.25rem;
